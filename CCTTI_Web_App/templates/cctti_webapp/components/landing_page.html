@@ -1,0 +1,137 @@
+{% extends 'cctti_webapp/frame_A.html' %}
+
+
+{% block content %}
+{% load staticfiles %}
+    <div class="wrapper-landing-page" id="wrapper-landing-page">
+        <div class="nav-container">
+            {% include 'cctti_webapp/components/main_nav.html' %}
+        <div class="container">
+            <div class="row">
+
+                <div class="col-sm-6">
+                    <div class="title-wrapper">
+                        <h1 class="text-white text-title"><b>City<br>College of <br>Technology and <br>Trade <br>Inc.</b></h1>
+                        <h4 class="text-white text-title"><i>"Leading Individuals to Become Competent Against the World"</i></h4>
+                    </div>
+                </div>
+
+
+                <div class="col-sm-6">
+                    <div class="">
+                        <div class="card">
+                            <div class="card-header bg-main">
+                                <h3 class="text-info">Staff Sign In</h3>
+                            </div>
+                            <div class="card-body">
+                        <form>
+                           <input class="form-control" type="text" name="username" placeholder="Username">
+                            <br>
+                            <input class="form-control" type="password" name="password" placeholder="Password">
+                        </form>
+                            </div>
+                            <div class="card-footer">
+                                <div class="text-right">
+                                    <button type="submit" class="btn btn-success">Sign-In</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        </div>
+    </div>
+
+{#    <div class="footer bg-dark">#}
+{#        <div class="row">#}
+{#                <div class="col-md-6">#}
+{#                    <h6 class="text-warning"><i class="fa fa-envelope">&nbsp;citycollegeoftechnologytradeinc.gmail.com</i></h6>#}
+{#                </div>#}
+{#                <div class="col-md-6">#}
+{#                    <h5 class="text-white"><i class="fa fa-copyright">&nbsp;copyrights reserved {% now 'Y' %}</i></h5>#}
+{#                </div>#}
+{#        </div>#}
+{#    </div>#}
+
+
+    
+<div class="center-bl">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4 text-center">
+                <div class="img-holder">
+                    <img class="img img-fluid imgx" src="{% static 'cctti_webapp/website_photos/learn.png' %}">
+                    <br><br>
+                    <h5 class="text-info">Be Knowledgeable</h5>
+                    <p class="text-secondary">Lorem =e hic iste maxime neque odio pariatur porro? Assumenda autem distinctio dolorem doloribus facere harum odit, voluptate voluptatem! Amet consequatur, distinctio impedit modi nisi quos.</p>
+                </div>
+            </div>
+            <div class="col-sm-4  text-center">
+                <div class="img-holder">
+                    <img class="img img-fluid imgx" src="{% static 'cctti_webapp/website_photos/competent.png' %}">
+                    <br><br>
+                    <h5 class="text-info">Be Compentent</h5>
+                    <p class="text-secondary">Lorem ipsum dolor s=aut cumque debitis deserunt earum, eius harum hic impedit incidunt ipsum labore laborum libero mollitia nobis odio optio praesentium quae quia quis rem, saepe sed similique tempora tempore unde voluptates voluptatum. Dolores eius explicabo ipsa itaque.</p>
+                </div>
+            </div>
+            <div class="col-sm-4 text-center">
+                <div class="img-holder">
+                    <img class="img img-fluid imgx" src="{% static 'cctti_webapp/website_photos/courses.png' %}">
+                    <br><br>
+                    <h5 class="text-info">Choose Your Strand</h5>
+                    <p class="text-secondary">Lorem ipsum dolor smque dolores dolorum, earum enim explicabo fugit id minima necessitatibus quaerat quidem repellendus reprehenderit sed tempora unde veniam voluptate? Animi asperiores at eius error exercitationem, in ipsam, itaque nemo provident quia unde.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div class="tesda-block">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                <img class="img img-fluid img-tesda" src="{% static 'cctti_webapp/website_photos/tesda.png' %}">
+                    <br>
+                    <h1 class="text-info">Accredited</h1>
+                </div>
+            </div>
+        </div>
+</div>
+
+<footer class="footer">
+<div class="container">
+    <div class="row footer-content">
+        <div class="col-lg-8">
+            <h6 class="text-white"><i class="fa fa-phone"></i>&nbsp;contact us</h6>
+            <h6 class="text-secondary"><i class="fa fa-mobile-phone"></i>&nbsp;09171644086</h6>
+            <h6 class="text-secondary"><i class="fa fa-envelope"></i>&nbsp;citycollegeoftechologytradel@gmail.com</h6>
+            <h6 class="text-secondary">
+                <i class="fa fa-address-card"></i>&nbsp;3rd Floor, Planters Bldg, Tinio Street, San Vicente, Gapan City, Nueva Ecija</h6><br>
+        </div>
+        <div class="col-lg-4">
+            <a href="">
+                <h6 class="text-danger btn-link"><i class="fa fa-copyright"></i>&nbsp;City College of Technology and Trade Inc.</h6></a>
+            <a href="">
+                <h6 class="text-secondary btn-link"><i class="fa fa-facebook-official text-blue">
+                </i>&nbsp;facebook.com/ccct GAPAN</h6></a>
+            <a href="#">
+                <h6 class="text-secondary btn-link"><i class="fa fa-info text-secondary">
+                </i>&nbsp;Privacy Policy</h6></a>
+            <h6 class="text-info"><i class="fa fa-copyright"></i>
+                copyrights reserved {% now 'Y' %}</h6>
+
+            <br>
+        </div>
+    </div>
+</div>
+</footer>
+
+<div id="cookieConsent">
+    <div id="closeCookieConsent">x</div>
+    This website is using cookies because it will not work without them.
+    By using our site, it means that you accept these.<a class="cookieConsentOK">Accept</a>
+</div>
+
+{% endblock %}

@@ -1,0 +1,140 @@
+.wrapper-landing-page {
+    /*background-image: url("../website_photos/router.jpg");*/
+    /*background-image: url("../website_photos/electronics.jpeg");*/
+    /*background-image: url("../website_photos/tourism.jpg");*/
+    background-image: url("../website_photos/electronics2.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 700px;
+    transition: 2s 2s;
+}
+
+.nav-container {
+    display: grid;
+    padding: 20px;
+}
+
+.title-wrapper {
+    /*background: rgba(255, 255, 255, 0.13);*/
+    display: grid;
+    padding: 20px;
+    align-items: start;
+    height: auto;
+}
+
+.footer{
+    background-color: #1c1c1c;
+}
+
+.footer-content{
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+
+/*Cookie Consent Begin*/
+#cookieConsent {
+    background-color: rgba(20,20,20,0.8);
+    min-height: 26px;
+    font-size: 14px;
+    color: #ccc;
+    line-height: 26px;
+    padding: 8px 0 8px 30px;
+    font-family: "Trebuchet MS",Helvetica,sans-serif;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: none;
+    z-index: 9999;
+}
+#cookieConsent a {
+    color: #4B8EE7;
+    text-decoration: none;
+}
+#closeCookieConsent {
+    float: right;
+    display: inline-block;
+    cursor: pointer;
+    height: 20px;
+    width: 20px;
+    margin: -15px 0 0 0;
+    font-weight: bold;
+}
+#closeCookieConsent:hover {
+    color: #FFF;
+}
+#cookieConsent a.cookieConsentOK {
+    background-color: orange;
+    color: #000;
+    display: inline-block;
+    border-radius: 5px;
+    padding: 0 20px;
+    cursor: pointer;
+    float: right;
+    margin: 0 60px 0 10px;
+}
+#cookieConsent a.cookieConsentOK:hover {
+    background-color: #e0a223;
+}
+/*Cookie Consent End*/
+
+.imgx {
+    height: 200px;
+    width: 200px;
+}
+
+.center-bl {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background: #e0a223;
+}
+
+
+.img-holder {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background: whitesmoke;
+    height: 520px;
+    margin: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 20px;
+    box-shadow: 15px 23px 31px rgba(40, 40, 40, 0.71);
+}
+
+#bootstrap-overrides h1 {
+    font-weight: bold;
+    font-size: 5px;
+}
+
+.tesda-block {
+    height: 500px;
+    background: rgba(173, 173, 173, 0.42);
+}
+
+.img-tesda {
+    padding-top: 50px;
+    height: 380px;
+    width: 300px;
+}
+
+.text-title {
+    text-shadow: 2px 2px rgba(51, 48, 52, 0.49);
+}
+
+.card{
+    margin-top: 30px;
+    background: rgba(183, 183, 183, 0.26);
+    box-shadow: 15px 23px 31px rgba(40, 40, 40, 0.18);
+}
+
+.bg-main {
+    background: rgba(27, 27, 27, 0.75);
+}
+
+@media (max-width: 500px) {
+        .wrapper-landing-page {
+            height: auto;
+        }
+}

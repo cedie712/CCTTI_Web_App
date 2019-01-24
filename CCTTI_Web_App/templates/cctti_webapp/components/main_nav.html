@@ -1,0 +1,24 @@
+{% load staticfiles %}
+
+<nav class="navbar navbar-fixed-top navbar-expand-lg navbar-dark navbar-bg-blur">
+    <img src="{% static 'cctti_webapp/website_photos/cctti.png' %}" width="150" height="150" class="d-inline-block align-top" alt="">
+    <a class="navbar-brand" href="#">
+       <h3 class="text-left">CCTTI</h3></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#"><h5>Home </h5><span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#"><h5>Link</h5></a>
+      </li>
+    </ul>
+    <div class="form-inline my-2 my-lg-0">
+      <button class="btn btn-danger my-2 my-sm-0" type="submit">Pick Your Course</button>
+    </div>
+  </div>
+</nav>
