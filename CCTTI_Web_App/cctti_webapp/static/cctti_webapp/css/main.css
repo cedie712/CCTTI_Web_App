@@ -8,7 +8,7 @@
 
 
 .text-yellow{
-    color: yellow;
+    color: #ffa121;
 }
 
 .text-blue{
@@ -22,4 +22,17 @@
 
 .text-blue{
     color: #3d8696;
+}
+
+.text-title {
+    text-shadow: 2px 2px rgba(51, 48, 52, 0.35);
+}
+
+.footer{
+    background-color: #1c1c1c;
+}
+
+.footer-content{
+    padding-top: 40px;
+    padding-bottom: 40px;
 }

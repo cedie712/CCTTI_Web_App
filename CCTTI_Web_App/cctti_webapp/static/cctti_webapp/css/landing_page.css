@@ -1,7 +1,4 @@
 .wrapper-landing-page {
-    /*background-image: url("../website_photos/router.jpg");*/
-    /*background-image: url("../website_photos/electronics.jpeg");*/
-    /*background-image: url("../website_photos/tourism.jpg");*/
     background-image: url("../website_photos/electronics2.jpeg");
     background-repeat: no-repeat;
     background-size: cover;
@@ -21,16 +18,6 @@
     align-items: start;
     height: auto;
 }
-
-.footer{
-    background-color: #1c1c1c;
-}
-
-.footer-content{
-    padding-top: 40px;
-    padding-bottom: 40px;
-}
-
 
 /*Cookie Consent Begin*/
 #cookieConsent {
@@ -115,12 +102,8 @@
 
 .img-tesda {
     padding-top: 50px;
-    height: 380px;
+    height: 400px;
     width: 300px;
-}
-
-.text-title {
-    text-shadow: 2px 2px rgba(51, 48, 52, 0.49);
 }
 
 .card{

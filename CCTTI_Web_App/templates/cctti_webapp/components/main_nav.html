@@ -10,15 +10,14 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#"><h5>Home </h5><span class="sr-only">(current)</span></a>
-      </li>
       <li class="nav-item">
-        <a class="nav-link" href="#"><h5>Link</h5></a>
+        <a class="nav-link" href="#"><h5>About </h5><span class="sr-only">(current)</span></a>
       </li>
     </ul>
     <div class="form-inline my-2 my-lg-0">
-      <button class="btn btn-danger my-2 my-sm-0" type="submit">Pick Your Course</button>
+      <a href="{% url 'courses' %}">
+          <button class="btn btn-danger my-2 my-sm-0" type="submit">Courses We Offer</button>
+      </a>
     </div>
   </div>
 </nav>

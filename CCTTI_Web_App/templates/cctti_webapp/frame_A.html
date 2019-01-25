@@ -5,10 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>CCTTI</title>
     {% load staticfiles %}
-       <link rel="icon" type="png" href="{% static 'cctti_webapp/website_photos/cctti.png' %}">
+    <link rel="icon" type="png" href="{% static 'cctti_webapp/website_photos/cctti.png' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'cctti_webapp/bootstrap-4.1.1/dist/css/bootstrap.min.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'cctti_webapp/Font-Awesome-fa-4/css/font-awesome.min.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'cctti_webapp/css/landing_page.css' %}">
+    {% block page_css %}
+{#        page_modular_css#}
+    {% endblock %}
     <link rel="stylesheet" type="text/css" href="{% static 'cctti_webapp/css/main_nav.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'cctti_webapp/css/main.css' %}">
 </head>
@@ -21,7 +23,10 @@
 
 <script src="{% static 'cctti_webapp/js/jquery-3.3.1.min.js' %}"></script>
 <script src="{% static 'cctti_webapp/bootstrap-4.1.1/dist/js/bootstrap.min.js' %}"></script>
-<script src="{% static 'cctti_webapp/js/landing_page.js' %}"></script>
+
+{% block custom_scripts %}
+
+{% endblock %}
 
 </body>
 </html>

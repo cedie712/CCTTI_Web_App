@@ -1,0 +1,102 @@
+{% extends 'cctti_webapp/frame_A.html' %}
+{% load staticfiles %}
+
+{% block page_css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'cctti_webapp/css/courses.css' %}">
+{% endblock %}
+
+{% block content %}
+
+    <div class="wrapper">
+        <div class="nav-container">
+            <nav class="navbar navbar-fixed-top navbar-expand-lg navbar-dark navbar-bg-blur">
+                <img src="{% static 'cctti_webapp/website_photos/cctti.png' %}" width="150" height="150" class="d-inline-block align-top" alt="">
+                <a class="navbar-brand" href="#">
+                   <h3 class="text-left">CCTTI</h3></a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                  <li class="nav-item">
+                    <a class="nav-link" href="#"><h5>About </h5><span class="sr-only">(current)</span></a>
+                  </li>
+                </ul>
+                <div class="form-inline my-2 my-lg-0">
+                  <a href="{% url 'landing_page' %}">
+                      <button class="btn btn-danger my-2 my-sm-0" type="submit">Send Us An Application</button>
+                  </a>
+                </div>
+              </div>
+            </nav>
+        </div>
+
+        <div class="container">
+            <div class="row">
+
+                <div class="col-sm-6">
+
+                </div>
+
+                <div class="col-sm-6">
+
+                    <div class="title-wrapper">
+                        <h1 class="text-orange text-title">Choose Your Course</h1>
+                        <h4 class="text-white text-title"><i>“It is not in the stars to hold our destiny but in ourselves. . .” <br>- William Shakespeare</i></h4>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <div class="bottom-block">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4">
+
+                    <div class="course-block local-guiding-service">
+                        <h1 class="text-white">Local Guiding Service NCII</h1>
+                    </div>
+
+                    <div class="course-block tourism-promotion">
+                        <h1 class="text-white">Tourism Promotion Services NCII</h1>
+                    </div>
+
+                </div>
+                <div class="col-sm-4">
+
+                    <div class="course-block computer-systems">
+                        <h1 class="text-white">Computer Systems Servicing NCII</h1>
+                    </div>
+
+                    <div class="course-block electronics">
+                        <h1 class="text-white">Electronic Product Assembly and Servicing NCII</h1>
+                    </div>
+
+                </div>
+                <div class="col-sm-4">
+
+                    <div class="course-block events-management">
+                        <h1 class="text-white">Events Management Services NCIII</h1>
+                    </div>
+
+                    <div class="course-block bookkeeping">
+                        <h1 class="text-white">Bookkeeping NCII</h1>
+                    </div>
+
+
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    {% include 'cctti_webapp/components/footer.html' %}
+
+{% endblock %}
