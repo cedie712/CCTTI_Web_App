@@ -79,7 +79,7 @@
     text-align: center;
     margin-top: 30px;
     margin-bottom: 30px;
-    box-shadow: 10px 23px 31px rgba(40, 40, 40, 0.35);
+    box-shadow: 10px 23px 31px rgba(29, 29, 29, 0.5);
     background: #0c242c;
     /*border-width: 2px;*/
     /*border-style: solid;*/
@@ -113,6 +113,42 @@
 /*}*/
 
 /*courses*/
+.overlay-local-guiding-service,
+.overlay-bookkeeping,
+.overlay-computer-systems,
+.overlay-electronics,
+.overlay-events-management,
+.overlay-tourism-promotion {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgb(0, 140, 186);
+  overflow: hidden;
+  width: 100%;
+  height: 0;
+  transition: .5s ease;
+  /*padding: 20px;*/
+}
+
+.local-guiding-service:hover .overlay-local-guiding-service,
+.bookkeeping:hover .overlay-bookkeeping,
+.computer-systems:hover .overlay-computer-systems,
+.electronics:hover .overlay-electronics,
+.events-management:hover .overlay-events-management,
+.tourism-promotion:hover .overlay-tourism-promotion{
+  height: 100%;
+}
+
+.overlay-container {
+    padding: 40px;
+}
+
+.overlay-container p {
+    color: #0c242c;
+}
+
+
 
 
 @media (max-width: 700px) {

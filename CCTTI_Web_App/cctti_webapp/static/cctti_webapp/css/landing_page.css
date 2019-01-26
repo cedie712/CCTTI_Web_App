@@ -6,10 +6,10 @@
     transition: 2s 2s;
 }
 
-.nav-container {
-    display: grid;
-    padding: 20px;
-}
+/*.nav-container {*/
+    /*display: grid;*/
+    /*padding: 20px;*/
+/*}*/
 
 .title-wrapper {
     /*background: rgba(255, 255, 255, 0.13);*/

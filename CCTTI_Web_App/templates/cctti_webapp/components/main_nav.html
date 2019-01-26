@@ -2,7 +2,7 @@
 
 <nav class="navbar navbar-fixed-top navbar-expand-lg navbar-dark navbar-bg-blur">
     <img src="{% static 'cctti_webapp/website_photos/cctti.png' %}" width="150" height="150" class="d-inline-block align-top" alt="">
-    <a class="navbar-brand" href="#">
+    <a class="navbar-brand" href="{% url 'landing_page' %}">
        <h3 class="text-left">CCTTI</h3></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -15,9 +15,9 @@
       </li>
     </ul>
     <div class="form-inline my-2 my-lg-0">
-{#      <a href="{% url 'landing_page' %}#tesda-block">#}
+      <a href="{% url 'landing_page' %}#tesda-block">
           <button class="btn btn-danger my-2 my-sm-0" id="staff-s" type="submit">Staff Sign In</button>
-{#      </a>#}
+      </a>
     </div>
   </div>
 </nav>

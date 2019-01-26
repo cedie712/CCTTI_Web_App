@@ -1,6 +1,10 @@
 {% extends 'cctti_webapp/frame_A.html' %}
 {% load staticfiles %}
 
+{% block title %}
+    CCTTI
+{% endblock %}
+
 {% block page_css %}
     <link rel="stylesheet" type="text/css" href="{% static 'cctti_webapp/css/landing_page.css' %}">
 {% endblock %}
@@ -14,8 +18,8 @@
 
                 <div class="col-sm-6">
                     <div class="title-wrapper">
-                        <h1 class="text-white text-title"><b>City<br>College of <br>Technology and <br>Trade <br>Inc.</b></h1>
-                        <h4 class="text-white text-title"><i>"Leading Individuals to Become Competent Against the World"</i></h4>
+                        <h1 class="text-white text-title title"><b>City<br>College of <br>Technology and <br>Trade <br>Inc.</b></h1>
+                        <h4 class="text-white text-title title-down"><i>"Leading Individuals to Become Competent Against the World"</i></h4>
                     </div>
                 </div>
 
@@ -62,12 +66,12 @@
                 <div class="col-sm-6 text-center">
                 <img class="img img-fluid img-tesda" src="{% static 'cctti_webapp/website_photos/tesda.png' %}">
                     <br>
-                    <h1 class="text-info">Accredited</h1>
+                    <h1 class="text-info accredited">Accredited</h1>
                 </div>
 
                 <div class="col-sm-6 card-container">
                     <div class="container">
-                        <div class="card bg-light">
+                        <div class="card bg-light signin-card">
                             <div class="card-header">
                                 <h5 class="text-default"><i class="fa fa-sign-in"></i>&nbsp;Staff Sign In</h5>
                             </div>

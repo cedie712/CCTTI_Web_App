@@ -1,6 +1,10 @@
 {% extends 'cctti_webapp/frame_A.html' %}
 {% load staticfiles %}
 
+{% block title %}
+    CCTTI | Courses
+{% endblock %}
+
 {% block page_css %}
     <link rel="stylesheet" type="text/css" href="{% static 'cctti_webapp/css/courses.css' %}">
 {% endblock %}
@@ -8,29 +12,7 @@
 {% block content %}
 
     <div class="wrapper">
-        <div class="nav-container">
-            <nav class="navbar navbar-fixed-top navbar-expand-lg navbar-dark navbar-bg-blur">
-                <img src="{% static 'cctti_webapp/website_photos/cctti.png' %}" width="150" height="150" class="d-inline-block align-top" alt="">
-                <a class="navbar-brand" href="#">
-                   <h3 class="text-left">CCTTI</h3></a>
-              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                  <li class="nav-item">
-                    <a class="nav-link" href="#"><h5>About </h5><span class="sr-only">(current)</span></a>
-                  </li>
-                </ul>
-                <div class="form-inline my-2 my-lg-0">
-                  <a href="{% url 'landing_page' %}#tesda-block">
-                      <button class="btn btn-danger my-2 my-sm-0" id="staff-sign-in" type="submit">Staff Sign In</button>
-                  </a>
-                </div>
-              </div>
-            </nav>
-        </div>
+    {% include 'cctti_webapp/components/main_nav.html' %}
 
         <div class="container">
             <div class="row">
@@ -61,16 +43,24 @@
 
         <div class="container">
             <div class="row">
+
                 <div class="col-sm-4">
 
                     <div class="course-block local-guiding-service">
+
                         <div class="course-img-container">
                             <img class="img course-png" src="{% static 'cctti_webapp/website_photos/guid.png' %}">
                         </div>
                         <br>
                         <h4 class="text-info">Local Guiding Service NCII</h4>
                         <p class="text-secondary">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi deserunt doloremque, explicabo facere hic minus pariatur perspiciatis tempora temporibus voluptatum.</p>
-
+                      <div class="overlay-local-guiding-service">
+                        <div class="container overlay-container">
+                            <h4 class="text-white">Local Guiding Service NCII</h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt ducimus eos et fugiat illo illum nemo nihil non odio qui sequi, tempore vel, voluptatum. Architecto aspernatur dignissimos error hic ipsum officia perferendis praesentium repellat sed vel? Cumque error et fuga magni natus necessitatibus non odio quis
+                                repellat, sed! Dicta dignissimos dolor facere illum impedit ipsam iusto perferendis quidem repudiandae voluptatibus!</p>
+                        </div>
+                      </div>
                     </div>
 
                     <div class="course-block bookkeeping">
@@ -81,9 +71,18 @@
                         <h4 class="text-info">Bookkeeping NCII</h4>
                         <p class="text-secondary">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi deserunt doloremque, explicabo facere hic minus pariatur perspiciatis tempora temporibus voluptatum.</p>
 
+                        <div class="overlay-bookkeeping">
+                            <div class="container overlay-container">
+                            <h4 class="text-white">Bookkeeping NCII</h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt ducimus eos et fugiat illo illum nemo nihil non odio qui sequi, tempore vel, voluptatum. Architecto aspernatur dignissimos error hic ipsum officia perferendis praesentium repellat sed vel? Cumque error et fuga magni natus necessitatibus non odio quis
+                                repellat, sed! Dicta dignissimos dolor facere illum impedit ipsam iusto perferendis quidem repudiandae voluptatibus!</p>
+                            </div>
+                        </div>
+
                     </div>
 
                 </div>
+
                 <div class="col-sm-4">
 
                     <div class="course-block computer-systems">
@@ -93,6 +92,15 @@
                         <br>
                         <h4 class="text-info">Computer Systems Servicing NCII</h4>
                         <p class="text-secondary">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi deserunt doloremque, explicabo facere hic minus pariatur perspiciatis tempora temporibus voluptatum.</p>
+
+                        <div class="overlay-computer-systems">
+                            <div class="container overlay-container">
+                            <h4 class="text-white">Computer Systems Servicing NCII</h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt ducimus eos et fugiat illo illum nemo nihil non odio qui sequi, tempore vel, voluptatum. Architecto aspernatur dignissimos error hic ipsum officia perferendis praesentium repellat sed vel? Cumque error et fuga magni natus necessitatibus non odio quis
+                                repellat, sed! Dicta dignissimos dolor facere illum impedit ipsam iusto perferendis quidem repudiandae voluptatibus!</p>
+                            </div>
+                        </div>
+
                     </div>
 
                     <div class="course-block electronics">
@@ -102,6 +110,14 @@
                         <br>
                         <h4 class="text-info">Electronic Product Assembly and Servicing NCII</h4>
                         <p class="text-secondary">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi deserunt doloremque, explicabo facere hic minus pariatur perspiciatis tempora temporibus voluptatum.</p>
+
+                        <div class="overlay-electronics">
+                            <div class="container overlay-container">
+                            <h4 class="text-white">Electronic Product Assembly and Servicing NCII</h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt ducimus eos et fugiat illo illum nemo nihil non odio qui sequi, tempore vel, voluptatum. Architecto aspernatur dignissimos error hic ipsum officia perferendis praesentium repellat sed vel? Cumque error et fuga magni natus necessitatibus non odio quis
+                                repellat, sed! Dicta dignissimos dolor facere illum impedit ipsam iusto perferendis quidem repudiandae voluptatibus!</p>
+                            </div>
+                        </div>
 
                     </div>
 
@@ -116,6 +132,14 @@
                         <h4 class="text-info">Events Management Services NCIII</h4>
                         <p class="text-secondary">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi deserunt doloremque, explicabo facere hic minus pariatur perspiciatis tempora temporibus voluptatum.</p>
 
+                        <div class="overlay-events-management">
+                            <div class="container overlay-container">
+                            <h4 class="text-white">Events Management Services NCIII</h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt ducimus eos et fugiat illo illum nemo nihil non odio qui sequi, tempore vel, voluptatum. Architecto aspernatur dignissimos error hic ipsum officia perferendis praesentium repellat sed vel? Cumque error et fuga magni natus necessitatibus non odio quis
+                                repellat, sed! Dicta dignissimos dolor facere illum impedit ipsam iusto perferendis quidem repudiandae voluptatibus!</p>
+                            </div>
+                        </div>
+
                     </div>
 
                     <div class="course-block tourism-promotion">
@@ -125,6 +149,14 @@
                         <br>
                         <h4 class="text-info">Tourism Promotion Services NCII</h4>
                         <p class="text-secondary">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi deserunt doloremque, explicabo facere hic minus pariatur perspiciatis tempora temporibus voluptatum.</p>
+
+                        <div class="overlay-tourism-promotion">
+                            <div class="container overlay-container">
+                            <h4 class="text-white">Tourism Promotion Services NCII</h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt ducimus eos et fugiat illo illum nemo nihil non odio qui sequi, tempore vel, voluptatum. Architecto aspernatur dignissimos error hic ipsum officia perferendis praesentium repellat sed vel? Cumque error et fuga magni natus necessitatibus non odio quis
+                                repellat, sed! Dicta dignissimos dolor facere illum impedit ipsam iusto perferendis quidem repudiandae voluptatibus!</p>
+                            </div>
+                        </div>
 
                     </div>
 
