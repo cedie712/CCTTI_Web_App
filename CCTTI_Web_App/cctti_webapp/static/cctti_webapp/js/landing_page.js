@@ -38,6 +38,8 @@ document.getElementById('staff-s').onclick = () => {
 };
 
 
-ScrollReveal().reveal('.img-holder-1', {origin : 'left', delay: 200, distance : '120px', easing   : 'ease-in-out'});
-ScrollReveal().reveal('.img-holder-2', {delay: 300, distance : '120px', easing  : 'ease-in-out'});
-ScrollReveal().reveal('.img-holder-3', {origin : 'right', delay: 400, distance : '120px', easing   : 'ease-in-out'});
+ScrollReveal().reveal('.img-holder-1', {origin : 'left', delay: 200, distance : '120px', easing   : 'ease-in-out',
+                        scale: 0.40 });
+ScrollReveal().reveal('.img-holder-2', {delay: 300, distance : '120px', easing  : 'ease-in-out', scale: 0.50 });
+ScrollReveal().reveal('.img-holder-3', {origin : 'right', delay: 400, distance : '120px', easing   : 'ease-in-out',
+                        scale: 0.60});
