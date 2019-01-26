@@ -19,12 +19,57 @@
                     </div>
                 </div>
 
+            </div>
+        </div>
+        </div>
+    </div>
 
-                <div class="col-sm-6">
-                    <div class="">
-                        <div class="card">
-                            <div class="card-header bg-main">
-                                <h3 class="text-info"><i class="fa fa-sign-in"></i>&nbsp;Staff Sign In</h3>
+    
+<div class="center-bl">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4 text-center">
+                <div class="img-holder img-holder-1">
+                    <img class="img img-fluid imgx" src="{% static 'cctti_webapp/website_photos/learn.png' %}">
+                    <br><br>
+                    <h5 class="text-info">Be Knowledgeable</h5>
+                    <p class="text-secondary">Lorem =e hic iste maxime neque odio pariatur porro? Assumenda autem distinctio dolorem doloribus facere harum odit, voluptate voluptatem! Amet consequatur, distinctio impedit modi nisi quos.</p>
+                </div>
+            </div>
+            <div class="col-sm-4  text-center">
+                <div class="img-holder img-holder-2">
+                    <img class="img img-fluid imgx" src="{% static 'cctti_webapp/website_photos/competent.png' %}">
+                    <br><br>
+                    <h5 class="text-info">Be Compentent</h5>
+                    <p class="text-secondary">Lorem ipsum dolor s=aut cumque debitis deserunt earum, eius harum hic impedit incidunt ipsum labore laborum libero mollitia nobis odio optio praesentium quae quia quis rem, saepe sed similique tempora tempore unde voluptates voluptatum. Dolores eius explicabo ipsa itaque.</p>
+                </div>
+            </div>
+            <div class="col-sm-4 text-center">
+                <div class="img-holder img-holder-3">
+                    <img class="img img-fluid imgx" src="{% static 'cctti_webapp/website_photos/courses.png' %}">
+                    <br><br>
+                    <h5 class="text-info">Choose Your Strand</h5>
+                    <p class="text-secondary">Lorem ipsum dolor smque dolores dolorum, earum enim explicabo fugit id minima necessitatibus quaerat quidem repellendus reprehenderit sed tempora unde veniam voluptate? Animi asperiores at eius error exercitationem, in ipsam, itaque nemo provident quia unde.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div class="tesda-block" id="tesda-block">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 text-center">
+                <img class="img img-fluid img-tesda" src="{% static 'cctti_webapp/website_photos/tesda.png' %}">
+                    <br>
+                    <h1 class="text-info">Accredited</h1>
+                </div>
+
+                <div class="col-sm-6 card-container">
+                    <div class="container">
+                        <div class="card bg-light">
+                            <div class="card-header">
+                                <h5 class="text-default"><i class="fa fa-sign-in"></i>&nbsp;Staff Sign In</h5>
                             </div>
                             <div class="card-body">
                         <form>
@@ -39,54 +84,14 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="btn-container">
+                            <a href="{% url 'courses' %}">
+                                <button class="btn-info-big">Offered Courses</button>
+                            </a>
+                        </div>
                     </div>
                 </div>
 
-            </div>
-        </div>
-        </div>
-    </div>
-
-    
-<div class="center-bl">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-4 text-center">
-                <div class="img-holder">
-                    <img class="img img-fluid imgx" src="{% static 'cctti_webapp/website_photos/learn.png' %}">
-                    <br><br>
-                    <h5 class="text-info">Be Knowledgeable</h5>
-                    <p class="text-secondary">Lorem =e hic iste maxime neque odio pariatur porro? Assumenda autem distinctio dolorem doloribus facere harum odit, voluptate voluptatem! Amet consequatur, distinctio impedit modi nisi quos.</p>
-                </div>
-            </div>
-            <div class="col-sm-4  text-center">
-                <div class="img-holder">
-                    <img class="img img-fluid imgx" src="{% static 'cctti_webapp/website_photos/competent.png' %}">
-                    <br><br>
-                    <h5 class="text-info">Be Compentent</h5>
-                    <p class="text-secondary">Lorem ipsum dolor s=aut cumque debitis deserunt earum, eius harum hic impedit incidunt ipsum labore laborum libero mollitia nobis odio optio praesentium quae quia quis rem, saepe sed similique tempora tempore unde voluptates voluptatum. Dolores eius explicabo ipsa itaque.</p>
-                </div>
-            </div>
-            <div class="col-sm-4 text-center">
-                <div class="img-holder">
-                    <img class="img img-fluid imgx" src="{% static 'cctti_webapp/website_photos/courses.png' %}">
-                    <br><br>
-                    <h5 class="text-info">Choose Your Strand</h5>
-                    <p class="text-secondary">Lorem ipsum dolor smque dolores dolorum, earum enim explicabo fugit id minima necessitatibus quaerat quidem repellendus reprehenderit sed tempora unde veniam voluptate? Animi asperiores at eius error exercitationem, in ipsam, itaque nemo provident quia unde.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-    <div class="tesda-block">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12 text-center">
-                <img class="img img-fluid img-tesda" src="{% static 'cctti_webapp/website_photos/tesda.png' %}">
-                    <br>
-                    <h1 class="text-info">Accredited</h1>
-                </div>
             </div>
         </div>
 </div>
@@ -95,8 +100,8 @@
 
 <div id="cookieConsent">
     <div id="closeCookieConsent">x</div>
-    This website is using cookies because it will not work without them.
-    By using our site, it means that you accept these.<a class="cookieConsentOK">Accept</a>
+    This website is using cookies to ensure users will get the best experience.
+    If you continue to use this site, it means that you agree with this.<a class="cookieConsentOK">Accept</a>
 </div>
 
 {% endblock %}

@@ -24,8 +24,8 @@
                   </li>
                 </ul>
                 <div class="form-inline my-2 my-lg-0">
-                  <a href="{% url 'landing_page' %}">
-                      <button class="btn btn-danger my-2 my-sm-0" type="submit">Staff Sign In</button>
+                  <a href="{% url 'landing_page' %}#tesda-block">
+                      <button class="btn btn-danger my-2 my-sm-0" id="staff-sign-in" type="submit">Staff Sign In</button>
                   </a>
                 </div>
               </div>
@@ -35,23 +35,22 @@
         <div class="container">
             <div class="row">
 
+
+
                 <div class="col-sm-6">
                     <div class="course_img-container">
-                        <img class="img" src="{% static 'cctti_webapp/website_photos/bg_courses.png' %}">
+{#                        <img class="img" src="{% static 'cctti_webapp/website_photos/bg_courses.png' %}">#}
                     </div>
                 </div>
 
                 <div class="col-sm-6">
 
                     <div class="title-wrapper">
-                        <h1 class="text-orange text-title">Choose Your Course</h1>
-                        <h4 class="text-white text-title"><i>“It is not in the stars to hold our destiny but in ourselves. . .” <br>- William Shakespeare</i></h4>
+                        <h1 class="text-white text-title"><i>“It is not in the stars to hold our destiny but in ourselves” <br>- William Shakespeare</i></h1>
                     </div>
-                    <div class="btn-container">
-                        <a href=""><button class="btn-info-big">Send us an application
-                            <i class="fa fa-send text-black-50"></i></button></a>
-                    </div>
+
                 </div>
+
 
             </div>
 
@@ -69,7 +68,9 @@
                             <img class="img course-png" src="{% static 'cctti_webapp/website_photos/guid.png' %}">
                         </div>
                         <br>
-                        <h3 class="text-white">Local Guiding Service NCII</h3>
+                        <h4 class="text-info">Local Guiding Service NCII</h4>
+                        <p class="text-secondary">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi deserunt doloremque, explicabo facere hic minus pariatur perspiciatis tempora temporibus voluptatum.</p>
+
                     </div>
 
                     <div class="course-block bookkeeping">
@@ -77,7 +78,9 @@
                             <img class="img course-png" src="{% static 'cctti_webapp/website_photos/books.png' %}">
                         </div>
                         <br>
-                        <h3 class="text-white">Bookkeeping NCII</h3>
+                        <h4 class="text-info">Bookkeeping NCII</h4>
+                        <p class="text-secondary">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi deserunt doloremque, explicabo facere hic minus pariatur perspiciatis tempora temporibus voluptatum.</p>
+
                     </div>
 
                 </div>
@@ -88,7 +91,8 @@
                             <img class="img course-png" src="{% static 'cctti_webapp/website_photos/compserv.png' %}">
                         </div>
                         <br>
-                        <h3 class="text-white">Computer Systems Servicing NCII</h3>
+                        <h4 class="text-info">Computer Systems Servicing NCII</h4>
+                        <p class="text-secondary">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi deserunt doloremque, explicabo facere hic minus pariatur perspiciatis tempora temporibus voluptatum.</p>
                     </div>
 
                     <div class="course-block electronics">
@@ -96,7 +100,9 @@
                             <img class="img course-png" src="{% static 'cctti_webapp/website_photos/electronics.png' %}">
                         </div>
                         <br>
-                        <h3 class="text-white">Electronic Product Assembly and Servicing NCII</h3>
+                        <h4 class="text-info">Electronic Product Assembly and Servicing NCII</h4>
+                        <p class="text-secondary">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi deserunt doloremque, explicabo facere hic minus pariatur perspiciatis tempora temporibus voluptatum.</p>
+
                     </div>
 
                 </div>
@@ -107,7 +113,9 @@
                             <img class="img course-png" src="{% static 'cctti_webapp/website_photos/eventmanage.png' %}">
                         </div>
                         <br>
-                        <h3 class="text-white">Events Management Services NCIII</h3>
+                        <h4 class="text-info">Events Management Services NCIII</h4>
+                        <p class="text-secondary">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi deserunt doloremque, explicabo facere hic minus pariatur perspiciatis tempora temporibus voluptatum.</p>
+
                     </div>
 
                     <div class="course-block tourism-promotion">
@@ -115,16 +123,25 @@
                             <img class="img course-png" src="{% static 'cctti_webapp/website_photos/guide.png' %}">
                         </div>
                         <br>
-                        <h3 class="text-white">Tourism Promotion Services NCII</h3>
+                        <h4 class="text-info">Tourism Promotion Services NCII</h4>
+                        <p class="text-secondary">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi deserunt doloremque, explicabo facere hic minus pariatur perspiciatis tempora temporibus voluptatum.</p>
+
                     </div>
 
 
                 </div>
             </div>
         </div>
-
+                    <div class="btn-container">
+                        <a href=""><button class="btn-info-big">Send us an application
+                            <i class="fa fa-send text-dark"></i></button></a>
+                    </div>
     </div>
 
     {% include 'cctti_webapp/components/footer.html' %}
 
+{% endblock %}
+
+{% block custom_scripts %}
+    <script src="{% static 'cctti_webapp/js/courses.js' %}"></script>
 {% endblock %}

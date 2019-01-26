@@ -1,4 +1,3 @@
-
 $(document).ready(function(){
     setTimeout(function () {
         $("#cookieConsent").fadeIn(200);
@@ -24,3 +23,21 @@ setInterval(() => {
     }
 }, 5500);
 
+
+
+if (window.location.hash) {
+  $('html,body').animate({
+  scrollTop: $(window.location.hash).offset().top
+});
+}
+
+document.getElementById('staff-s').onclick = () => {
+      $('html,body').animate({
+      scrollTop: $("#tesda-block").offset().top
+    });
+};
+
+
+ScrollReveal().reveal('.img-holder-1', {origin : 'left', delay: 200, distance : '120px', easing   : 'ease-in-out'});
+ScrollReveal().reveal('.img-holder-2', {delay: 300, distance : '120px', easing  : 'ease-in-out'});
+ScrollReveal().reveal('.img-holder-3', {origin : 'right', delay: 400, distance : '120px', easing   : 'ease-in-out'});
