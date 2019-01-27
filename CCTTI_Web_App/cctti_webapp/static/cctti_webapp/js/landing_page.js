@@ -86,17 +86,17 @@ ScrollReveal().reveal('.img-holder-3',
 ScrollReveal().reveal('.img-tesda',
     {
         // origin : 'left',
-        delay: 100,
+        delay: 200,
         distance: '120px',
         easing: 'ease-in-out',
-        scale: 0.30,
+        // scale: 0.30,
     });
 
 
 ScrollReveal().reveal('.accredited',
     {
         // origin : 'bottom',
-        delay: 200,
+        delay: 350,
         distance: '120px',
         easing: 'ease-in-out',
         scale: 0.80,

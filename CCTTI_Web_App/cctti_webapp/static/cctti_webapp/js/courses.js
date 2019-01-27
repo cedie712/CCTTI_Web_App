@@ -49,7 +49,7 @@ ScrollReveal().reveal('.bookkeeping',
 ScrollReveal().reveal('.electronics',
     {
         // origin: 'left',
-        delay: 400,
+        delay: 500,
         distance : '220px',
         easing: 'ease-in-out',
         // scale: 0.50
@@ -58,7 +58,7 @@ ScrollReveal().reveal('.electronics',
 ScrollReveal().reveal('.tourism-promotion',
     {
         // origin: 'left',
-        delay: 100,
+        delay: 300,
         distance : '220px',
         easing: 'ease-in-out',
         // scale: 0.40
