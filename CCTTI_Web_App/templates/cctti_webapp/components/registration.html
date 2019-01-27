@@ -1,0 +1,46 @@
+{% extends 'cctti_webapp/frame_A.html' %}
+{% load staticfiles %}
+
+{% block title %}
+    CCTTI | Registration
+{% endblock %}
+
+{% block page_css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'cctti_webapp/css/registration.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <form>
+                   <div class="content-container">
+                        <div class="slide-container">
+                            <div id="block-1" class="registration-block">
+
+                            </div>
+                            <div id="block-2" class="registration-block">
+
+                            </div>
+                            <div id="block-3" class="registration-block">
+
+                            </div>
+                            <div id="block-4" class="registration-block">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="btn-group">
+                        <button class="btn btn-danger">Previous</button>
+                        <button class="btn btn-danger" id="next">Next</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block custom_scripts %}
+    <script src="{% static 'cctti_webapp/js/registration.js' %}"></script>
+{% endblock %}
+
