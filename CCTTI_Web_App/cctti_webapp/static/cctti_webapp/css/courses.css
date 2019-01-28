@@ -1,5 +1,5 @@
 .wrapper {
-    background-image: url("../website_photos/blackboardA.jpeg");
+    background-image: url("../website_photos/action-aggression-aggressive-652348.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     height: 700px;
@@ -13,25 +13,27 @@
 }
 
 .title-wrapper {
-    border-style: solid;
-    border-width: 2px;
-    border-color: whitesmoke;
-    padding: 70px;
+    /*border-style: solid;*/
+    /*border-width: 2px;*/
+    /*border-color: whitesmoke;*/
+    /*background-color: rgba(245, 245, 245, 0.22);*/
+    padding: 20px;
     /*margin-top: 60px;*/
     border-radius: 5px;
     margin-top: 60px;
 }
 
 .btn-container {
-    margin-top: 30px;
-    margin-bottom: 30px;
+    margin-top: 15px;
+    margin-bottom: 15px;
     text-align: center;
 }
 
 .btn-info-big {
     display: inline-block;
-    padding: 12px 16px;
-    padding-top: 7px;
+    /*padding: 12px 16px;*/
+    /*padding-top: 20px;*/
+    padding: 20px;
     margin-bottom: 0;
     /*color: #21a8a7;*/
     color: whitesmoke;
@@ -40,22 +42,22 @@
     cursor: pointer;
     /*background-color: transparent;*/
     background-color: #21a8a7;
-    border-radius: 3px;
+    border-radius: 70px;
     border-style: solid;
-    border-width: 1px;
+    border-width: 2px;
     font-weight: lighter !important;
     text-shadow: none;
     box-shadow: none;
     transition: all 0.12s linear 0s !important;
-    font: 24px/30px "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font: 20px/30px "Helvetica Neue",Helvetica,Arial,sans-serif;
     border-color: #21a8a7;
     outline: none;
 }
 
 .btn-info-big:hover {
-    border-color: #1d8988;
-    background-color: #1d8988;
-    color: whitesmoke;
+    border-color: #1d8e8d;
+    background-color: #1d8e8d;
+    /*color: whitesmoke;*/
 }
 
 .bottom-block {
@@ -72,41 +74,124 @@
 
 .course-block {
     padding: 40px;
-    height: 400px;
-    border-radius: 5px;
+    height: 500px;
+    /*border-radius: 5px;*/
     text-align: center;
     margin-top: 30px;
     margin-bottom: 30px;
-    box-shadow: 10px 23px 31px rgba(40, 40, 40, 0.35);
+    box-shadow: 10px 23px 31px rgba(29, 29, 29, 0.5);
+    background: #0c242c;
+    /*border-width: 2px;*/
+    /*border-style: solid;*/
+    /*border-color: rgba(8, 6, 6, 0.55);*/
+}
+
+.mobile_tap {
+    display: none;
 }
 
 /*courses*/
 
-.local-guiding-service {
-    background: #0e90d2;
-}
+/*.local-guiding-service {*/
+    /*background: #0e90d2;*/
+/*}*/
 
-.computer-systems {
-    background: #d2600d;
-}
+/*.computer-systems {*/
+    /*background: #d2600d;*/
+/*}*/
 
-.events-management {
-    background: #b4b4b4;
-}
+/*.events-management {*/
+    /*background: #b4b4b4;*/
+/*}*/
 
-.tourism-promotion {
-    background: #16374c;
-}
+/*.tourism-promotion {*/
+    /*background: #16374c;*/
+/*}*/
 
-.electronics {
-    background-color: #13c008;
-}
+/*.electronics {*/
+    /*background-color: #13c008;*/
+/*}*/
 
-.bookkeeping {
-    background: #ffb600;
-}
+/*.bookkeeping {*/
+    /*background: #ffb600;*/
+/*}*/
 
 /*courses*/
+.overlay-local-guiding-service,
+.overlay-bookkeeping,
+.overlay-computer-systems,
+.overlay-electronics,
+.overlay-events-management,
+.overlay-tourism-promotion {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgb(0, 140, 186);
+  overflow: hidden;
+  width: 100%;
+  height: 0;
+  transition: .5s ease;
+  /*padding: 20px;*/
+}
+
+.local-guiding-service:hover .overlay-local-guiding-service,
+.bookkeeping:hover .overlay-bookkeeping,
+.computer-systems:hover .overlay-computer-systems,
+.electronics:hover .overlay-electronics,
+.events-management:hover .overlay-events-management,
+.tourism-promotion:hover .overlay-tourism-promotion{
+  height: 100%;
+}
+
+.overlay-container {
+    /*padding-top: 20px;*/
+    /*padding-bottom: 20px;*/
+    /*padding-left: 40px;*/
+    /*padding-right: 40px;*/
+    padding: 20px;
+}
+
+.overlay-container p {
+    color: #0c242c;
+}
+
+
+.card_img {
+    height: 200px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.card-img-local-guiding-service {
+    background-image: url("../website_photos/guiding_card_md.jpg");
+    /*background-position: center;*/
+}
+
+.card-img-computer-systems {
+    background-image: url("../website_photos/comp_repair_md.jpg");
+}
+
+.card-img-events-management {
+    background-image: url("../website_photos/events_card_md.jpg");
+    background-position: center;
+}
+
+.card-img-bookkeeping {
+    background-image: url("../website_photos/library.jpg");
+    background-position: right;
+}
+
+.card-img-electronics {
+    background-image: url("../website_photos/fucker.jpg");
+    background-position: left;
+}
+
+.card-tourism-promotion {
+    background-image: url("../website_photos/binoculars_md.jpg");
+    background-position: left;
+}
+
 
 
 @media (max-width: 700px) {
@@ -123,7 +208,25 @@
         display: none;
     }
 
+    .course-block {
+        /*height: 520px;*/
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
     .title-wrapper {
     margin-top: 10px;
+    }
+
+    .btn-info-big {
+    padding: 15px;
+    font: 20px/30px "Helvetica Neue",Helvetica,Arial,sans-serif;
+
+    }
+}
+
+@media (max-width: 600px) {
+    .mobile_tap {
+        display: block;
     }
 }

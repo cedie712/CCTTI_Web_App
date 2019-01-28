@@ -1,6 +1,10 @@
 {% extends 'cctti_webapp/frame_A.html' %}
 {% load staticfiles %}
 
+{% block title %}
+    CCTTI | Courses
+{% endblock %}
+
 {% block page_css %}
     <link rel="stylesheet" type="text/css" href="{% static 'cctti_webapp/css/courses.css' %}">
 {% endblock %}
@@ -8,50 +12,27 @@
 {% block content %}
 
     <div class="wrapper">
-        <div class="nav-container">
-            <nav class="navbar navbar-fixed-top navbar-expand-lg navbar-dark navbar-bg-blur">
-                <img src="{% static 'cctti_webapp/website_photos/cctti.png' %}" width="150" height="150" class="d-inline-block align-top" alt="">
-                <a class="navbar-brand" href="#">
-                   <h3 class="text-left">CCTTI</h3></a>
-              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                  <li class="nav-item">
-                    <a class="nav-link" href="#"><h5>About </h5><span class="sr-only">(current)</span></a>
-                  </li>
-                </ul>
-                <div class="form-inline my-2 my-lg-0">
-                  <a href="{% url 'landing_page' %}">
-                      <button class="btn btn-danger my-2 my-sm-0" type="submit">Staff Sign In</button>
-                  </a>
-                </div>
-              </div>
-            </nav>
-        </div>
+    {% include 'cctti_webapp/components/main_nav.html' %}
 
         <div class="container">
             <div class="row">
 
+
+
                 <div class="col-sm-6">
                     <div class="course_img-container">
-                        <img class="img" src="{% static 'cctti_webapp/website_photos/bg_courses.png' %}">
+{#                        <img class="img" src="{% static 'cctti_webapp/website_photos/bg_courses.png' %}">#}
                     </div>
                 </div>
 
                 <div class="col-sm-6">
 
                     <div class="title-wrapper">
-                        <h1 class="text-orange text-title">Choose Your Course</h1>
-                        <h4 class="text-white text-title"><i>“It is not in the stars to hold our destiny but in ourselves. . .” <br>- William Shakespeare</i></h4>
+                        <h1 class="text-white text-title"><i>“It is not in the stars to hold our destiny but in ourselves” <br>- William Shakespeare</i></h1>
                     </div>
-                    <div class="btn-container">
-                        <a href=""><button class="btn-info-big">Send us an application
-                            <i class="fa fa-send text-black-50"></i></button></a>
-                    </div>
+
                 </div>
+
 
             </div>
 
@@ -62,14 +43,25 @@
 
         <div class="container">
             <div class="row">
+
                 <div class="col-sm-4">
 
                     <div class="course-block local-guiding-service">
+
                         <div class="course-img-container">
                             <img class="img course-png" src="{% static 'cctti_webapp/website_photos/guid.png' %}">
                         </div>
                         <br>
-                        <h3 class="text-white">Local Guiding Service NCII</h3>
+                        <h4 class="text-info">Local Guiding Service NCII</h4>
+                        <p class="text-secondary">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi deserunt doloremque, explicabo facere hic minus pariatur perspiciatis tempora temporibus voluptatum.</p>
+                        <p class="text-white mobile_tap">Tap to see more details</p>
+                      <div class="overlay-local-guiding-service">
+                        <div class="card_img card-img-local-guiding-service"></div>
+                        <div class="container overlay-container">
+                            <h4 class="text-white">Local Guiding Service NCII</h4>
+                            <p class="text-justify">repellat, sed! Dicta dignissimos dolor facere illum impedit ipsam iusto perferendis quidem repudiandae voluptatibus!</p>
+                        </div>
+                      </div>
                     </div>
 
                     <div class="course-block bookkeeping">
@@ -77,10 +69,21 @@
                             <img class="img course-png" src="{% static 'cctti_webapp/website_photos/books.png' %}">
                         </div>
                         <br>
-                        <h3 class="text-white">Bookkeeping NCII</h3>
+                        <h4 class="text-info">Bookkeeping NCII</h4>
+                        <p class="text-secondary">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi deserunt doloremque, explicabo facere hic minus pariatur perspiciatis tempora temporibus voluptatum.</p>
+                        <p class="text-white mobile_tap">Tap to see more details</p>
+                        <div class="overlay-bookkeeping">
+                            <div class="card_img card-img-bookkeeping"></div>
+                            <div class="container overlay-container">
+                            <h4 class="text-white">Bookkeeping NCII</h4>
+                            <p class="text-justify">repellat, sed! Dicta dignissimos dolor facere illum impedit ipsam iusto perferendis quidem repudiandae voluptatibus!</p>
+                            </div>
+                        </div>
+
                     </div>
 
                 </div>
+
                 <div class="col-sm-4">
 
                     <div class="course-block computer-systems">
@@ -88,7 +91,17 @@
                             <img class="img course-png" src="{% static 'cctti_webapp/website_photos/compserv.png' %}">
                         </div>
                         <br>
-                        <h3 class="text-white">Computer Systems Servicing NCII</h3>
+                        <h4 class="text-info">Computer Systems Servicing NCII</h4>
+                        <p class="text-secondary">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi deserunt doloremque, explicabo facere hic minus pariatur perspiciatis tempora temporibus voluptatum.</p>
+                        <p class="text-white mobile_tap">Tap to see more details</p>
+                        <div class="overlay-computer-systems">
+                            <div class="card_img card-img-computer-systems"></div>
+                            <div class="container overlay-container">
+                            <h4 class="text-white">Computer Systems Servicing NCII</h4>
+                            <p class="text-justify">repellat, sed! Dicta dignissimos dolor facere illum impedit ipsam iusto perferendis quidem repudiandae voluptatibus!</p>
+                            </div>
+                        </div>
+
                     </div>
 
                     <div class="course-block electronics">
@@ -96,7 +109,17 @@
                             <img class="img course-png" src="{% static 'cctti_webapp/website_photos/electronics.png' %}">
                         </div>
                         <br>
-                        <h3 class="text-white">Electronic Product Assembly and Servicing NCII</h3>
+                        <h4 class="text-info">Electronic Product Assembly and Servicing NCII</h4>
+                        <p class="text-secondary">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi deserunt doloremque, explicabo facere hic minus pariatur perspiciatis tempora temporibus voluptatum.</p>
+                        <p class="text-white mobile_tap">Tap to see more details</p>
+                        <div class="overlay-electronics">
+                            <div class="card_img card-img-electronics"></div>
+                            <div class="container overlay-container">
+                            <h4 class="text-white">Electronic Product Assembly and Servicing NCII</h4>
+                            <p class="text-justify">repellat, sed! Dicta dignissimos dolor facere illum impedit ipsam iusto perferendis quidem repudiandae voluptatibus!</p>
+                            </div>
+                        </div>
+
                     </div>
 
                 </div>
@@ -107,7 +130,17 @@
                             <img class="img course-png" src="{% static 'cctti_webapp/website_photos/eventmanage.png' %}">
                         </div>
                         <br>
-                        <h3 class="text-white">Events Management Services NCIII</h3>
+                        <h4 class="text-info">Events Management Services NCIII</h4>
+                        <p class="text-secondary">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi deserunt doloremque, explicabo facere hic minus pariatur perspiciatis tempora temporibus voluptatum.</p>
+                        <p class="text-white mobile_tap">Tap to see more details</p>
+                        <div class="overlay-events-management">
+                            <div class="card_img card-img-events-management"></div>
+                            <div class="container overlay-container">
+                            <h4 class="text-white">Events Management Services NCIII</h4>
+                            <p class="text-justify">repellat, sed! Dicta dignissimos dolor facere illum impedit ipsam iusto perferendis quidem repudiandae voluptatibus!</p>
+                            </div>
+                        </div>
+
                     </div>
 
                     <div class="course-block tourism-promotion">
@@ -115,16 +148,33 @@
                             <img class="img course-png" src="{% static 'cctti_webapp/website_photos/guide.png' %}">
                         </div>
                         <br>
-                        <h3 class="text-white">Tourism Promotion Services NCII</h3>
+                        <h4 class="text-info">Tourism Promotion Services NCII</h4>
+                        <p class="text-secondary">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi deserunt doloremque, explicabo facere hic minus pariatur perspiciatis tempora temporibus voluptatum.</p>
+                        <p class="text-white mobile_tap">Tap to see more details</p>
+                        <div class="overlay-tourism-promotion">
+                            <div class="card_img card-tourism-promotion"></div>
+                            <div class="container overlay-container">
+                            <h4 class="text-white">Tourism Promotion Services NCII</h4>
+                            <p class="text-justify">repellat, sed! Dicta dignissimos dolor facere illum impedit ipsam iusto perferendis quidem repudiandae voluptatibus!</p>
+                            </div>
+                        </div>
+
                     </div>
 
 
                 </div>
             </div>
         </div>
-
+                    <div class="btn-container">
+                        <a href="{% url 'registration' %}"><button class="btn-info-big">Send us an application
+                            <i class="fa fa-send text-dark"></i></button></a>
+                    </div>
     </div>
 
     {% include 'cctti_webapp/components/footer.html' %}
 
+{% endblock %}
+
+{% block custom_scripts %}
+    <script src="{% static 'cctti_webapp/js/courses.js' %}"></script>
 {% endblock %}
