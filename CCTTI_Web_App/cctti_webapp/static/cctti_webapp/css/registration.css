@@ -1,3 +1,5 @@
+
+
 .carousel-item {
   height: 100vh;
   min-height: 300px;
@@ -6,4 +8,85 @@
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+}
+
+.reg-form-container {
+  padding: 100px;
+  padding-left: 150px;
+  padding-right: 150px;
+}
+
+.personal-information-container {
+  padding: 140px;
+  padding-left: 150px;
+  padding-right: 150px;
+}
+
+.final-info-container {
+  padding: 200px;
+  padding-left: 150px;
+  padding-right: 150px;
+}
+
+.carousel, .carousel-inner > .item {
+  display: run-in;
+  width: 100%;
+  height: auto!important;
+}
+
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+  display: block;
+  height: auto;
+  max-width: 100%;
+  line-height: 1;
+}
+
+.carousel-container {
+    margin-left:0;
+}
+
+.button-prev, .button-next {
+ display: none;
+}
+
+.carousel-control-prev, .carousel-control-next {
+  width: 160px;
+}
+
+
+@media (max-width: 700px) {
+  .reg-form-container {
+    padding: 20px;
+  }
+
+  .personal-information-container {
+    padding: 20px;
+    /*padding-left: 150px;*/
+    /*padding-right: 150px;*/
+  }
+
+  .final-info-container {
+  padding: 20px;
+}
+
+  .carousel-control-prev, .carousel-control-next {
+    display: none;
+  }
+
+  .button-prev, .button-next {
+   display: block;
+  }
+
+
+
+  .carousel-item {
+    height: auto;
+    min-height: 300px;
+    background: no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
 }

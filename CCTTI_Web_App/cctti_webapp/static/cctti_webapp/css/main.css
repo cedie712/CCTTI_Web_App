@@ -7,8 +7,8 @@
 }
 
 
-.text-yellow{
-    color: #ffa121;
+.text-yellow {
+    color: #fffd16;
 }
 
 .text-scarlet{
@@ -31,3 +31,12 @@
     padding-top: 40px;
     padding-bottom: 40px;
 }
+
+.bg-blue {
+    background: #0c242c;
+}
+
+.text-pink {
+    color: hotpink;
+}
+
