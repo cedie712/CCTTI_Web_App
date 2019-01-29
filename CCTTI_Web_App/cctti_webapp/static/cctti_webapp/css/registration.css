@@ -1,46 +1,9 @@
-.content-container {
-    width: 550px;
-    height: 350px;
-    border: 5px black solid;
-    overflow: hidden;
+.carousel-item {
+  height: 100vh;
+  min-height: 300px;
+  background: no-repeat center center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
-
-.slide-container {
-    height: 600px;
-    width: 2200px;
-    transform: translate3d(-1100px, 0, 0);
-    overflow: hidden;
-    transition: transform .5s ease-in-out;
-}
-
-.registration-block {
-    /*height: 600px;*/
-    float: left;
-    width: 550px;
-    height: 350px;
-    white-space: normal;
-    background-repeat: no-repeat;
-
-}
-
-#block-1 {
-    background-color: rgb(179, 215, 255);
-}
-
-#block-2 {
-    /*display: none;*/
-    background-color: green;
-    transition: 2s 2s;
-}
-
-#block-3 {
-
-    /*display: none;*/
-    background-color: grey;
-}
-
-#block-4 {
-    /*display: none;*/
-    background-color: orange;
-}
-
