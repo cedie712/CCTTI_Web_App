@@ -9,20 +9,24 @@
                         <div class="col-sm-12">
                             <h5 class="text-secondary">Name</h5>
                                 <div class="row">
+
                                     <div class="col-sm-4">
-                                        <input type="text" class="form-control" id="last_name" name="last_name" placeholder="Last Name">
+                                        <input type="text" class="form-control letters" id="first_name" name="first_name" placeholder="First Name">
+                                        <span class="fa fa-exclamation errspan text-danger fa-2x" id="first_name_exclamation"></span>
                                         <br>
                                     </div>
 
                                     <div class="col-sm-4">
-                                        <input type="text" class="form-control" id="first_name" name="first_name" placeholder="First Name">
+                                        <input type="text" class="form-control letters" id="middle_name" name="middle_name" placeholder="Middle Name">
                                         <br>
                                     </div>
 
                                     <div class="col-sm-4">
-                                        <input type="text" class="form-control" id="middle_name" name="middle_name" placeholder="Middle Name">
+                                        <input type="text" class="form-control letters" id="last_name" name="last_name" placeholder="Last Name">
+                                        <span class="fa fa-exclamation errspan text-danger fa-2x" id="last_name_exclamation"></span>
                                         <br>
                                     </div>
+
                                 </div>
                         </div>
 
@@ -35,22 +39,39 @@
                                 <div class="row">
                                     <div class="col-sm-4">
                                         <input type="text" class="form-control" id="house_num_street" name="house_num_street" placeholder="House Number/Street">
+                                        <span class="fa fa-exclamation errspan text-danger fa-2x" id="house_street_exclamation"></span>
                                         <br>
-                                        <input type="text" class="form-control" id="city_municipality" name="city_municipality" placeholder="City/Municipality">
+                                        <select class="form-control" id="province" name="province" ></select>
+                                        <span class="fa fa-exclamation errspan text-danger fa-2x" id="province_exclamation"></span>
                                         <br>
                                     </div>
 
                                     <div class="col-sm-4">
                                         <input type="text" class="form-control" id="barangay" name="barangay" placeholder="Barangay">
+                                        <span class="fa fa-exclamation errspan text-danger fa-2x" id="barangay_exclamation"></span>
                                         <br>
-                                        <input type="text" class="form-control" id="province" name="province" placeholder="Province">
+                                        <select type="text" class="form-control" id="city_municipality" name="city_municipality"></select>
+                                        <span class="fa fa-exclamation errspan text-danger fa-2x" id="city_municipality_exclamation"></span>
                                         <br>
                                     </div>
 
                                     <div class="col-sm-4">
-                                        <input type="text" class="form-control" id="district" name="district" placeholder="District">
-                                        <br>
-                                        <input type="text" class="form-control" id="region" name="region" placeholder="Region">
+                                        <select name="district" id="district" class="form-control" required>
+                                            <option value="">Select District </option>
+                                            <option value="I">I</option>
+                                            <option value="II">II</option>
+                                            <option value="III">III</option>
+                                            <option value="IV">IV</option>
+                                            <option value="V">V</option>
+                                            <option value="VI">VI</option>
+                                            <option value="VII">VII</option>
+                                            <option value="VIII">VIII</option>
+                                            <option value="Lone District">Lone District</option>
+                                            <option value="1st(North) District">1st(North) District</option>
+                                            <option value="2nd(South) District">1st(South) District</option>
+                                        </select>
+                                        <span class="fa fa-exclamation errspan text-danger fa-2x" id="district_exclamation"></span>
+
                                         <br>
                                     </div>
                                 </div>
@@ -60,21 +81,33 @@
                                 <div class="row">
                                     <div class="col-sm-4">
                                         <input type="text" class="form-control" id="email_fb" name="email_fb" placeholder="Email/Facebook Account">
+                                        <span class="fa fa-exclamation errspan text-danger fa-2x" id="email_fb_exclamation"></span>
                                         <br>
                                     </div>
 
                                     <div class="col-sm-4">
-                                        <input type="text" class="form-control" id="contact_no" name="contact_no" placeholder="Contact No.">
+                                        <input type="text" class="form-control integers" id="contact_no" name="contact_no" placeholder="Contact No.">
+                                        <span class="fa fa-exclamation errspan text-danger fa-2x" id="contact_exclamation"></span>
                                         <br>
                                     </div>
 
                                     <div class="col-sm-4">
-                                        <input type="text" class="form-control" id="nationality" name="nationality" placeholder="Nationality">
+                                        <input type="text" class="form-control letters" id="nationality" name="nationality" placeholder="Nationality">
+                                        <span class="fa fa-exclamation errspan text-danger fa-2x" id="nationality_exclamation"></span>
                                         <br>
                                     </div>
                                 </div>
                         </div>
 
+                    </div>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-4 offset-sm-4 offset-sm-4">
+                                <div class="alert alert-danger text-center" id="alert_manpower" role="alert">
+                                    Complete the Form Fields
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="text-center">
                         <div class="btn-group">

@@ -54,6 +54,34 @@
   width: 160px;
 }
 
+.errspan {
+        float: right;
+        margin-right: 15px;
+        margin-top: -33px;
+        position: relative;
+        z-index: 2;
+    }
+
+/* input validating*/
+
+/* manpower */
+#last_name_exclamation,
+#first_name_exclamation,
+#house_street_exclamation,
+#province_exclamation,
+#barangay_exclamation,
+#district_exclamation,
+#email_fb_exclamation,
+#contact_exclamation,
+#nationality_exclamation,
+#city_municipality_exclamation {
+  display: none;
+}
+/* manpower */
+
+/* input validating*/
+
+
 
 @media (max-width: 700px) {
   .reg-form-container {
@@ -89,4 +117,8 @@
     -o-background-size: cover;
     background-size: cover;
   }
+}
+
+#alert_manpower {
+  display: none;
 }
