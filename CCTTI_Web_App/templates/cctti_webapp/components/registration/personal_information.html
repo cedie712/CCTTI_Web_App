@@ -64,6 +64,7 @@
                                     <div class="col-sm-4">
                                         <h5 class="text-secondary">Birthdate</h5>
                                         <input type="date" class="form-control" id="birthdate" name="birthdate">
+                                        <span class="fa fa-exclamation errspan text-danger fa-2x" id="birthdate_exclamation"></span>
                                         <br>
                                     </div>
                                     <div class="col-sm-8">
@@ -79,6 +80,7 @@
                                             <option value="College Undergraduate">College Undergraduate</option>
                                             <option value="College Graduate or Higher">College Graduate or Higher</option>
                                         </select>
+                                        <span class="fa fa-exclamation errspan text-danger fa-2x" id="attainment_exclamation"></span>
                                         <br>
                                     </div>
                                 </div>
@@ -90,23 +92,34 @@
 
                                     <div class="col-sm-4">
                                         <select class="form-control" id="province_bdate" name="province_bdate"></select>
+                                        <span class="fa fa-exclamation errspan text-danger fa-2x" id="province_bdate_exclamation"></span>
                                         <br>
                                     </div>
 
                                     <div class="col-sm-4">
                                         <select class="form-control" id="city_bdate" name="city_bdate"></select>
+                                        <span class="fa fa-exclamation errspan text-danger fa-2x" id="city_bdate_exclamation"></span>
                                         <br>
                                     </div>
                                 </div>
                         </div>
 
                     </div>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-4 offset-sm-4 offset-sm-4">
+                                <div class="alert alert-danger text-center" id="alert_personal_info" role="alert">
+                                    Complete the Form Fields
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <div class="text-center">
                         <div class="btn-group">
-                            <a class="button-prev" href="#carouselExampleIndicators" role="button">
+                            <a class="button-prev" href="#carouselExampleIndicators" id="prev_1_btn" role="button">
                                 <button class="btn btn-warning">Previous</button>
                             </a>
-                            <a class="button-next" href="#carouselExampleIndicators" role="button">
+                            <a class="button-next" href="#carouselExampleIndicators" id="next_1_btn" role="button">
                                  <button class="btn btn-info">Next</button>
                             </a>
                         </div>
@@ -114,3 +127,12 @@
                         <br>
                 </div>
 </div>
+
+            <a class="carousel-control-prev" href="#learners_profile_form" id="prev_1" role="button">
+                <i class="fa fa-arrow-circle-left fa-3x"></i>
+
+            </a>
+            <a class="carousel-control-next" href="#learners_profile_form" id="next_1" role="button">
+                <i class="fa fa-arrow-circle-right fa-3x"></i>
+
+            </a>

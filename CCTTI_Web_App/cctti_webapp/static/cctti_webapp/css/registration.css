@@ -64,6 +64,10 @@
 
 /* input validating*/
 
+#alert_manpower, #alert_personal_info {
+  display: none;
+}
+
 /* manpower */
 #last_name_exclamation,
 #first_name_exclamation,
@@ -74,7 +78,11 @@
 #email_fb_exclamation,
 #contact_exclamation,
 #nationality_exclamation,
-#city_municipality_exclamation {
+#city_municipality_exclamation,
+#birthdate_exclamation,
+#attainment_exclamation,
+#province_bdate_exclamation,
+#city_bdate_exclamation {
   display: none;
 }
 /* manpower */
@@ -119,6 +127,3 @@
   }
 }
 
-#alert_manpower {
-  display: none;
-}

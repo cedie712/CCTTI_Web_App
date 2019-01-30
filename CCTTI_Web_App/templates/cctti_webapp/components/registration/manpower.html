@@ -41,22 +41,16 @@
                                         <input type="text" class="form-control" id="house_num_street" name="house_num_street" placeholder="House Number/Street">
                                         <span class="fa fa-exclamation errspan text-danger fa-2x" id="house_street_exclamation"></span>
                                         <br>
-                                        <select class="form-control" id="province" name="province" ></select>
-                                        <span class="fa fa-exclamation errspan text-danger fa-2x" id="province_exclamation"></span>
-                                        <br>
                                     </div>
 
                                     <div class="col-sm-4">
                                         <input type="text" class="form-control" id="barangay" name="barangay" placeholder="Barangay">
                                         <span class="fa fa-exclamation errspan text-danger fa-2x" id="barangay_exclamation"></span>
                                         <br>
-                                        <select type="text" class="form-control" id="city_municipality" name="city_municipality"></select>
-                                        <span class="fa fa-exclamation errspan text-danger fa-2x" id="city_municipality_exclamation"></span>
-                                        <br>
                                     </div>
 
                                     <div class="col-sm-4">
-                                        <select name="district" id="district" class="form-control" required>
+                                        <select name="district" id="district" class="form-control">
                                             <option value="">Select District </option>
                                             <option value="I">I</option>
                                             <option value="II">II</option>
@@ -76,6 +70,26 @@
                                     </div>
                                 </div>
                         </div>
+
+                        <div class="col-sm-12">
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <select class="form-control" id="province" name="province" ></select>
+                                        <span class="fa fa-exclamation errspan text-danger fa-2x" id="province_exclamation"></span>
+                                        <br>
+                                    </div>
+
+                                    <div class="col-sm-4">
+                                        <select type="text" class="form-control" id="city_municipality" name="city_municipality"></select>
+                                        <span class="fa fa-exclamation errspan text-danger fa-2x" id="city_municipality_exclamation"></span>
+                                        <br>
+                                    </div>
+
+                                </div>
+                        </div>
+
+
+
                         <div class="col-sm-12">
                             <h5 class="text-secondary">Other Information</h5>
                                 <div class="row">
@@ -111,10 +125,10 @@
                     </div>
                     <div class="text-center">
                         <div class="btn-group">
-                            <a class="button-prev" href="#carouselExampleIndicators" role="button">
+                            <a class="button-prev" href="#carouselExampleIndicators" id="prev_0_btn" role="button">
                                 <button class="btn btn-warning">Previous</button>
                             </a>
-                            <a class="button-next" href="#carouselExampleIndicators" role="button">
+                            <a class="button-next" href="#carouselExampleIndicators" id="next_0_btn" role="button">
                                  <button class="btn btn-info">Next</button>
                             </a>
                         </div>
@@ -122,3 +136,12 @@
                         <br>
                 </div>
 </div>
+
+            <a class="carousel-control-prev" href="#learners_profile_form" id="prev_0" role="button">
+                <i class="fa fa-arrow-circle-left fa-3x"></i>
+
+            </a>
+            <a class="carousel-control-next" href="#learners_profile_form" id="next_0" role="button">
+                <i class="fa fa-arrow-circle-right fa-3x"></i>
+
+            </a>

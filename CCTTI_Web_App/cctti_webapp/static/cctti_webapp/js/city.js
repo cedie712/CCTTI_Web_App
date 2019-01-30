@@ -471,16 +471,16 @@
  var City = function() {
 
 	this.p = [],this.c = [],this.a = [],this.e = {};
-	window.onerror = function() { return true; }
+	window.onerror = function() { return true; };
 	
 	this.getProvinces = function() {
 		for(let province in cities) {
 			this.p.push(province);
 		}
 		return this.p;
-	}
+	};
 	this.getCities = function(province) {
-		if(province.length==0) {
+		if(province.length === 0) {
 			console.error('Please input province name');
 			return;
 		}
@@ -488,7 +488,7 @@
 			this.c.push(cities[province][i]);
 		}
 		return this.c;
-	}
+	};
 	this.getAllCities = function() {
 		for(let i in cities) {
 			for(let j=0;j<=cities[i].length-1;j++) {
@@ -497,7 +497,7 @@
 		}
 		this.a.sort();
 		return this.a;
-	}
+	};
 	this.showProvinces = function(element) {
 		var str = '<option value="">Select Province</option>';
 		for(let i in this.getProvinces()) {
@@ -508,7 +508,7 @@
 		document.querySelector(element).innerHTML = str;
 		this.e = element;
 		return this;
-	}
+	};
 	this.showCities = function(province,element) {
 		var str = '<option value="">Select City / Municipality</option>';
 		var elem = '';
@@ -527,7 +527,7 @@
 		document.querySelector(this.e).onchange = function() {		
 			var Obj = new City();
 			Obj.showCities(this.value,elem);
-		}
+		};
 		return this;
 	}
-}
+};
