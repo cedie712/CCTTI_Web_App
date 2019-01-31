@@ -22,6 +22,7 @@
                                             <option value="Working Student">Working Student</option>
                                             <option value="Others">Others</option>
                                         </select>
+                                        <span class="fa fa-exclamation errspan text-danger fa-2x" id="client_classification_exclamation"></span>
                                         <br>
                                     </div>
 
@@ -30,16 +31,18 @@
                                         <div class="row">
                                             <div class="col-sm-3">
                                                 <div class="container">
-                                                    <input type="radio" class="" name="has_taken" value="no" checked>
+                                                    <input type="radio" class="" name="has_taken" value="no" checked id="no_ncae">
                                                     <span class="text-warning">&nbsp;No </span><br>
-                                                    <input type="radio" class="" name="has_taken" value="yes">
+                                                    <input type="radio" class="" name="has_taken" value="yes" id="yes_ncae">
                                                     <span class="text-warning">&nbsp;Yes </span><br>
                                                 </div>
                                             </div>
                                             <div class="col-sm-9">
-                                                <input type="text" name="where_ncae" id="where_ncae" class="form-control" placeholder="Where?">
+                                                <input type="text" name="where_ncae" id="where_ncae" class="form-control" placeholder="Where?" disabled>
+                                            <span class="fa fa-exclamation errspan text-danger fa-2x" id="where_exclamation"></span>
                                                 <br>
-                                                <input type="date" name="when_ncae" id="when_ncae" class="form-control">
+                                                <input type="date" name="when_ncae" id="when_ncae" class="form-control" disabled>
+                                            <span class="fa fa-exclamation errspan text-danger fa-2x" id="when_exclamation"></span>
                                                 <br>
                                             </div>
                                         </div>
@@ -53,7 +56,7 @@
 
                         <div class="col-sm-6 offset-sm-3 offset-sm-3 text-center">
                             <h3 class="text-info">Name of Course/Qualification</h3>
-                                <select class="form-control" name="attainment" id="attainment">
+                                <select class="form-control" name="course" id="course">
                                     <option value="">Select Something</option>
                                     <option value="Computer Systems Servicing NCII">Computer Systems Servicing NCII</option>
                                     <option value="Local Guiding Service NCII">Local Guiding Service NCII</option>
@@ -61,19 +64,29 @@
                                     <option value="Electronic Product Assembly and Servicing NCII">Electronic Product Assembly and Servicing NCII</option>
                                     <option value="Tourism Promotion Services NCII">Tourism Promotion Services NCII</option>
                                     <option value="Bookkeeping NCII">Bookkeeping NCII</option>
-                                </select><br>
-                                <input type="submit" class="btn btn-success" value="Submit Application">
+                                </select>
+                            <span class="fa fa-exclamation errspan text-danger fa-2x" id="course_exclamation"></span><br>
 
+                                <input type="submit" class="btn btn-success" id="submit_btn" value="Submit Application"><br><br>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-8 offset-sm-2 offset-sm-2">
+                                <div class="alert alert-danger text-center" id="alert_final_form" role="alert">
+                                    Complete the Form Fields
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                         </div>
 
                     </div>
                         <br>
                     <div class="text-center">
                         <div class="btn-group">
-                            <a class="button-prev" href="#carouselExampleIndicators" id="prev_2_btn" role="button">
+                            <a class="button-prev" href="#learners_profile_form" id="prev_2_btn" role="button">
                                 <button class="btn btn-warning">Previous</button>
                             </a>
-                            <a class="button-next" href="#carouselExampleIndicators" id="next_2_btn" role="button">
+                            <a class="button-next" href="#learners_profile_form" id="next_2_btn" role="button">
                                  <button class="btn btn-info">Next</button>
                             </a>
                         </div>

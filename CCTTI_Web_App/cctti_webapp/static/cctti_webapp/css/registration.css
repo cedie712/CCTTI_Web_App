@@ -64,7 +64,7 @@
 
 /* input validating*/
 
-#alert_manpower, #alert_personal_info {
+#alert_manpower, #alert_personal_info, #alert_final_form {
   display: none;
 }
 
@@ -82,7 +82,11 @@
 #birthdate_exclamation,
 #attainment_exclamation,
 #province_bdate_exclamation,
-#city_bdate_exclamation {
+#city_bdate_exclamation,
+#client_classification_exclamation,
+#where_exclamation,
+#when_exclamation,
+#course_exclamation {
   display: none;
 }
 /* manpower */

@@ -14,6 +14,14 @@ function display_warning_personal_info() {
               2500);
 }
 
+function display_warning_final_form() {
+              $("#alert_final_form").fadeIn();
+          window.setTimeout(() => {
+                $("#alert_final_form").fadeOut();
+              },
+              2500);
+}
+
 function validate_manpower_form() {
     let last_name = document.getElementById("last_name").value;
     let first_name = document.getElementById("first_name").value;
@@ -125,8 +133,10 @@ function validate_personal_information_form() {
 
     });
 
-    if (check_empty.length !== 0) {
+    let d = new Date();
 
+    if (check_empty.length !== 0) {
+            document.getElementById("alert_personal_info").innerHTML = 'Complete the Form Fields';
             if (birthdate === '') {
                 let exclamation = $("#birthdate_exclamation");
                 exclamation.fadeIn();
@@ -151,13 +161,78 @@ function validate_personal_information_form() {
                exclamation.fadeOut();
             }
 
+
             display_warning_personal_info();
             return false;
+    }
+    else if ((parseInt(d.getFullYear()) - parseInt(birthdate.slice(0, 4))) < 13) {
+                let exclamation = $("#birthdate_exclamation");
+                exclamation.fadeIn();
+                exclamation.fadeOut();
+                document.getElementById("alert_personal_info").innerHTML = 'Invalid Birthdate';
+                display_warning_personal_info();
+                return false;
     }
 
     return true;
 }
 
+
+function validate_final_form() {
+    let client_classification = document.getElementById("client_classification").value;
+    let no_radio = document.getElementById("no_ncae");
+    let yes_radio = document.getElementById("yes_ncae");
+    let where_ncae = document.getElementById("where_ncae").value;
+    let when_ncae = document.getElementById("when_ncae").value;
+    let course = document.getElementById("course").value;
+
+    let input_list = [client_classification, course];
+
+    let check_empty = input_list.filter((value, index, array) => {
+        if (value === '') {
+            return true;
+        }
+
+    });
+
+    if (yes_radio.checked) {
+        input_list.push(when_ncae, when_ncae);
+    }
+
+    if (check_empty.length !== 0) {
+        if (client_classification === '') {
+            let exclamation = $("#client_classification_exclamation");
+            exclamation.fadeIn();
+            exclamation.fadeOut();
+        }
+
+        if (course === '') {
+            let exclamation = $("#course_exclamation");
+            exclamation.fadeIn();
+            exclamation.fadeOut();
+        }
+
+        if (yes_radio.checked) {
+            if (where_ncae === '') {
+                let exclamation = $("#where_exclamation");
+                exclamation.fadeIn();
+                exclamation.fadeOut();
+            }
+            if (when_ncae === '') {
+                let exclamation = $("#when_exclamation");
+                exclamation.fadeIn();
+                exclamation.fadeOut();
+            }
+        }
+
+        display_warning_final_form();
+        return false;
+
+    }
+
+    return true
+
+}
 
 
 if (window.innerWidth > 700) {
@@ -181,7 +256,7 @@ if (window.innerWidth > 700) {
     let next_1 = $('#next_1');
 
     next_1.click(function(){
-            // if (validate_manpower_form()) {
+            // if (validate_personal_information_form()) {
                 $(".carousel").carousel("next");
             // }
     });
@@ -300,3 +375,19 @@ window.onload = function() {
 
      city_province.showCities('#city_bdate');
 };
+
+document.getElementById("no_ncae").addEventListener('change', () => {
+    $('#when_ncae').prop('disabled', true);
+    $('#where_ncae').prop('disabled', true);
+});
+
+document.getElementById("yes_ncae").addEventListener('change', () => {
+    $('#when_ncae').prop('disabled', false);
+    $('#where_ncae').prop('disabled', false);
+});
+
+document.getElementById("submit_btn").addEventListener('click', (event) => {
+    event.preventDefault();
+    validate_final_form();
+});
+

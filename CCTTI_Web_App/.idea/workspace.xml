@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="b77e316d-9989-4f3b-9a67-696b33f558fb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CCTTI_Web_App/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/CCTTI_Web_App/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cctti_webapp/static/cctti_webapp/css/registration.css" beforeDir="false" afterPath="$PROJECT_DIR$/cctti_webapp/static/cctti_webapp/css/registration.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cctti_webapp/static/cctti_webapp/js/city.js" beforeDir="false" afterPath="$PROJECT_DIR$/cctti_webapp/static/cctti_webapp/js/city.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cctti_webapp/static/cctti_webapp/js/registration.js" beforeDir="false" afterPath="$PROJECT_DIR$/cctti_webapp/static/cctti_webapp/js/registration.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/cctti_webapp/components/registration.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/cctti_webapp/components/registration.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/cctti_webapp/components/registration/final_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/cctti_webapp/components/registration/final_form.html" afterDir="false" />
@@ -81,9 +79,10 @@
     <session id="1544127535">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="1" />
+          <entry key="project.closed" value="2" />
+          <entry key="project.open.time.116" value="1" />
           <entry key="project.open.time.80" value="1" />
-          <entry key="project.opened" value="1" />
+          <entry key="project.opened" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -104,17 +103,17 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="css" value="61" />
-          <entry key="html" value="144" />
-          <entry key="js" value="1695" />
+          <entry key="css" value="130" />
+          <entry key="html" value="366" />
+          <entry key="js" value="2777" />
           <entry key="py" value="11" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="CSS" value="61" />
-          <entry key="HTML" value="144" />
-          <entry key="JavaScript" value="1695" />
+          <entry key="CSS" value="130" />
+          <entry key="HTML" value="366" />
+          <entry key="JavaScript" value="2777" />
           <entry key="Python" value="11" />
         </counts>
       </usages-collector>
@@ -125,17 +124,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/cctti_webapp/components/registration.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="41" column="18" selection-start-line="41" selection-start-column="18" selection-end-line="41" selection-end-column="18" />
+            <state relative-caret-position="-180">
+              <caret column="19" selection-start-column="19" selection-end-column="19" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cctti_webapp/static/cctti_webapp/js/registration.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="570">
-              <caret line="256" column="34" selection-start-line="256" selection-start-column="34" selection-end-line="256" selection-end-column="34" />
+            <state relative-caret-position="345">
+              <caret line="227" column="36" selection-start-line="227" selection-start-column="36" selection-end-line="227" selection-end-column="36" />
             </state>
           </provider>
         </entry>
@@ -143,8 +142,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cctti_webapp/static/cctti_webapp/css/registration.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="66" column="37" selection-start-line="66" selection-start-column="37" selection-end-line="66" selection-end-column="37" />
+            <state relative-caret-position="-3">
+              <caret line="38" column="2" selection-start-line="38" selection-start-column="2" selection-end-line="38" selection-end-column="2" />
             </state>
           </provider>
         </entry>
@@ -158,11 +157,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/cctti_webapp/components/registration/final_form.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="87" column="85" selection-start-line="87" selection-start-column="85" selection-end-line="87" selection-end-column="85" />
+            <state relative-caret-position="267">
+              <caret line="69" column="128" selection-start-line="69" selection-start-column="128" selection-end-line="69" selection-end-column="128" />
             </state>
           </provider>
         </entry>
@@ -170,8 +169,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/cctti_webapp/components/registration/personal_information.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="346">
-              <caret line="130" selection-start-line="130" selection-end-line="137" selection-end-column="16" />
+            <state relative-caret-position="268">
+              <caret line="107" selection-start-line="107" selection-end-line="115" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -179,8 +178,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/cctti_webapp/components/registration/manpower.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="151">
-              <caret line="126" selection-start-line="126" selection-end-line="133" selection-end-column="30" />
+            <state relative-caret-position="211">
+              <caret line="130" column="79" selection-start-line="130" selection-start-column="79" selection-end-line="130" selection-end-column="79" />
             </state>
           </provider>
         </entry>
@@ -221,12 +220,12 @@
         <option value="$PROJECT_DIR$/cctti_webapp/static/cctti_webapp/js/main.js" />
         <option value="$PROJECT_DIR$/CCTTI_Web_App/settings.py" />
         <option value="$PROJECT_DIR$/cctti_webapp/static/cctti_webapp/js/city.js" />
-        <option value="$PROJECT_DIR$/cctti_webapp/static/cctti_webapp/css/registration.css" />
-        <option value="$PROJECT_DIR$/templates/cctti_webapp/components/registration.html" />
-        <option value="$PROJECT_DIR$/templates/cctti_webapp/components/registration/manpower.html" />
         <option value="$PROJECT_DIR$/templates/cctti_webapp/components/registration/personal_information.html" />
-        <option value="$PROJECT_DIR$/templates/cctti_webapp/components/registration/final_form.html" />
+        <option value="$PROJECT_DIR$/templates/cctti_webapp/components/registration/manpower.html" />
+        <option value="$PROJECT_DIR$/templates/cctti_webapp/components/registration.html" />
+        <option value="$PROJECT_DIR$/cctti_webapp/static/cctti_webapp/css/registration.css" />
         <option value="$PROJECT_DIR$/cctti_webapp/static/cctti_webapp/js/registration.js" />
+        <option value="$PROJECT_DIR$/templates/cctti_webapp/components/registration/final_form.html" />
       </list>
     </option>
   </component>
@@ -254,6 +253,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -330,7 +330,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -400,7 +399,7 @@
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1366" height="768" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4976526" visible="true" weight="0.24848485" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4976526" visible="true" weight="0.25227273" />
       <window_info id="Favorites" order="1" side_tool="true" />
       <window_info id="Structure" order="2" sideWeight="0.5023474" weight="0.32954547" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -414,7 +413,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.42723006" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.12519562" />
       <window_info anchor="bottom" id="Python Console" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -572,13 +571,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CCTTI_Web_App/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="89" column="32" selection-start-line="89" selection-start-column="32" selection-end-line="89" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/cctti_webapp/static/cctti_webapp/js/city.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
@@ -586,45 +578,52 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cctti_webapp/static/cctti_webapp/css/registration.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="66" column="37" selection-start-line="66" selection-start-column="37" selection-end-line="66" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/cctti_webapp/components/registration.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="41" column="18" selection-start-line="41" selection-start-column="18" selection-end-line="41" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/cctti_webapp/components/registration/manpower.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="151">
-          <caret line="126" selection-start-line="126" selection-end-line="133" selection-end-column="30" />
+        <state relative-caret-position="211">
+          <caret line="130" column="79" selection-start-line="130" selection-start-column="79" selection-end-line="130" selection-end-column="79" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CCTTI_Web_App/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="89" column="32" selection-start-line="89" selection-start-column="32" selection-end-line="89" selection-end-column="32" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/cctti_webapp/components/registration/personal_information.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="346">
-          <caret line="130" selection-start-line="130" selection-end-line="137" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/cctti_webapp/components/registration/final_form.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="87" column="85" selection-start-line="87" selection-start-column="85" selection-end-line="87" selection-end-column="85" />
+        <state relative-caret-position="268">
+          <caret line="107" selection-start-line="107" selection-end-line="115" selection-end-column="26" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/cctti_webapp/static/cctti_webapp/js/registration.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="256" column="34" selection-start-line="256" selection-start-column="34" selection-end-line="256" selection-end-column="34" />
+        <state relative-caret-position="345">
+          <caret line="227" column="36" selection-start-line="227" selection-start-column="36" selection-end-line="227" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cctti_webapp/static/cctti_webapp/css/registration.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3">
+          <caret line="38" column="2" selection-start-line="38" selection-start-column="2" selection-end-line="38" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/cctti_webapp/components/registration.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-180">
+          <caret column="19" selection-start-column="19" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/cctti_webapp/components/registration/final_form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="267">
+          <caret line="69" column="128" selection-start-line="69" selection-start-column="128" selection-end-line="69" selection-end-column="128" />
         </state>
       </provider>
     </entry>
