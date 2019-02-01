@@ -188,16 +188,16 @@ function validate_final_form() {
 
     let input_list = [client_classification, course];
 
+    if (yes_radio.checked) {
+        input_list.push(when_ncae, when_ncae);
+    }
+
     let check_empty = input_list.filter((value, index, array) => {
         if (value === '') {
             return true;
         }
 
     });
-
-    if (yes_radio.checked) {
-        input_list.push(when_ncae, when_ncae);
-    }
 
     if (check_empty.length !== 0) {
         if (client_classification === '') {
@@ -246,9 +246,9 @@ if (window.innerWidth > 700) {
     let next_0 = $('#next_0');
 
     next_0.click(function(){
-            // if (validate_manpower_form()) {
+            if (validate_manpower_form()) {
                 $(".carousel").carousel("next");
-            // }
+            }
     });
 
     // 1
@@ -256,9 +256,9 @@ if (window.innerWidth > 700) {
     let next_1 = $('#next_1');
 
     next_1.click(function(){
-            // if (validate_personal_information_form()) {
+            if (validate_personal_information_form()) {
                 $(".carousel").carousel("next");
-            // }
+            }
     });
 
 
@@ -301,8 +301,7 @@ else {
 
     next_0.click(function(e){
         e.preventDefault();
-        // if (validate_manpower_form()) {
-        if (1) {
+        if (validate_manpower_form()) {
           $(".carousel").carousel("next");
           window.scrollTo(0, 0);
         }
@@ -314,8 +313,7 @@ else {
 
     next_1.click(function(e){
         e.preventDefault();
-        // if (validate_manpower_form()) {
-        if (1) {
+        if (validate_personal_information_form()) {
           $(".carousel").carousel("next");
           window.scrollTo(0, 0);
         }
@@ -376,6 +374,7 @@ window.onload = function() {
      city_province.showCities('#city_bdate');
 };
 
+
 document.getElementById("no_ncae").addEventListener('change', () => {
     $('#when_ncae').prop('disabled', true);
     $('#where_ncae').prop('disabled', true);
@@ -388,6 +387,82 @@ document.getElementById("yes_ncae").addEventListener('change', () => {
 
 document.getElementById("submit_btn").addEventListener('click', (event) => {
     event.preventDefault();
-    validate_final_form();
+    if (validate_final_form()) {
+        //FORM DATA
+        // form_1
+        let first_name = $("#first_name");
+        let middle_name = $("#middle_name");
+        let last_name = $("#last_name");
+        let house_street = $("#house_num_street");
+        let barangay = $("#barangay");
+        let district = $("#district");
+        let province = $("#province");
+        let city_municipality = $("#city_municipality");
+        let email_fb = $("#email_fb");
+        let contact = $("#contact_no");
+        let nationality = $("#nationality");
+
+        // form_2
+        let sex = document.querySelector('input[name="sex"]:checked');
+        let civil_status = document.querySelector('input[name="civil_status"]:checked');
+        let employment_status = document.querySelector('input[name="employment_status"]:checked');
+        let birthdate = $("#birthdate");
+        let attainment = $("#attainment");
+        let birthplace_province = $("#province_bdate");
+        let birthplace_city_municipality = $("#city_bdate_exclamation");
+
+        // form_3
+        let client_classification = $('#client_classification');
+        let taken_ncae = document.querySelector('input[name="has_taken"]:checked');
+        let where_ncae = $("#where_ncae");
+        let when_ncae = $("#when_ncae");
+        let course = $("#course");
+
+        // SUBMIT FORM HERE GET ALL DATA
+        // DO SOME AJAX CALL PREPARE THE SERVER
+        $.ajax({
+            type: 'POST',
+            url: '/registration/',
+            data: {
+                // form 1 data
+                first_name: first_name.val(),
+                middle_name: middle_name.val(),
+                last_name: last_name.val(),
+                house_street: house_street.val(),
+                barangay: barangay.val(),
+                district: district.val(),
+                province: province.val(),
+                city_municipality: city_municipality.val(),
+                email_fb: email_fb.val(),
+                contact: contact.val(),
+                nationality: nationality.val(),
+
+                //form 2 data
+                sex: sex.value,
+                civil_Status: civil_status.value,
+                employment_status: employment_status.value,
+                birthdate: birthdate.val(),
+                attainment: attainment.val(),
+                birthplace_province: birthplace_province.val(),
+                birthplace_city_municipality: birthplace_city_municipality.val(),
+
+                //form 3 data
+                client_classification: client_classification.val(),
+                taken_ncae: taken_ncae.value,
+                where_ncae: where_ncae.val(),
+                when_ncae: when_ncae.val(),
+                course: course.val(),
+                csrfmiddlewaretoken: $('input[name=csrfmiddlewaretoken]').val()
+
+            },
+            success: (result) => {
+                console.log(result)
+                $("#success-banner").fadeIn().css("display", "grid");
+                 window.scrollTo(0, 0);
+            }
+        });
+    }
+
+
 });
 

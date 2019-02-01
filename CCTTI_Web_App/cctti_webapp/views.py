@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, HttpResponse
 
 
 # Create your views here.
@@ -11,4 +11,7 @@ def courses_page(request):
 
 
 def applicant_registration(request):
+    if request.method == 'POST':
+        return HttpResponse('fucker')
     return render(request, 'cctti_webapp/components/registration.html')
+

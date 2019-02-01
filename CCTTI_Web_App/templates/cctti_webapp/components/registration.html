@@ -14,6 +14,7 @@
         <div class="carousel-container">
         <header>
             <form id="applicant_registration_form">
+                {% csrf_token %}
           <div id="learners_profile_form" class="carousel slide bg-blue" data-ride="false" data-interval="false">
             <ol class="carousel-indicators">
               <li data-target="#learners_profile_form" class="active"></li>
@@ -47,6 +48,32 @@
         </header>
         </div>
 
+        <div id="success-banner" class="success-banner">
+            <div class="container">
+                <div class="row" id="success-card">
+                    <div class="col-sm-8 offset-sm-2 offset-sm-2 text-center">
+                        <img class="img img-responsive thumbs_up" src="{% static 'cctti_webapp/website_photos/thumbs-up-icon.png' %}">
+                        <br><br>
+                        <h3 class="text-info">Your Application was Submitted!</h3>
+                        <p class="text-white">Visit us at 3rd Floor, Planters Bldg, Tinio Street, San Vicente, Gapan City, Nueva Ecija <br>
+                        to complete your registration process<br><br>
+
+                        <span class="text-info">Bring the following requirements:</span><br>
+                        <span class="text-white">
+                            Transcript of Records or Diploma<br>
+                            Good Moral Certificate<br>
+                            2pcs. Passport Size Latest Photo of You<br>
+                            2pcs. 1*1 Latest Photo of You (white background, with collared clothes)<br>
+                            Copy of NSO or PSA
+                        </span>
+                        </p>
+                        <a href="{% url 'landing_page' %}">
+                            <button class="btn btn-info">Home</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
 
 {% endblock %}
 
