@@ -16,7 +16,6 @@ class ApplicantInformation(models.Model):
     sign_up_date = models.DateTimeField(blank=True, null=True)
 
     # Manpower Profile
-    applicant = models.ForeignKey(UserExt, on_delete=models.CASCADE)
     first_name = models.CharField(max_length=128, blank=True, null=True)
     middle_name = models.CharField(max_length=128, blank=True, null=True)
     last_name = models.CharField(max_length=128, blank=True, null=True)
@@ -32,7 +31,6 @@ class ApplicantInformation(models.Model):
     nationality = models.CharField(max_length=128, blank=True, null=True)
 
     # Personal Information
-    applicant = models.ForeignKey(UserExt, on_delete=models.CASCADE)
     gender = models.CharField(max_length=128, blank=True, null=True)
     civil_status = models.CharField(max_length=128, blank=True, null=True)
     employment_status = models.CharField(max_length=128, blank=True, null=True)

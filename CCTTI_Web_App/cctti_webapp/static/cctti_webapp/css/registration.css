@@ -97,13 +97,14 @@
 /* success_banner */
 #success-banner {
   position: absolute;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.81);
   /*margin-top: -700px;*/
   top: 0;
   right: 0;
   left: 0;
   bottom: 0;
   display: none;
+    /*display: grid;*/
   align-items: center;
 }
 
@@ -147,6 +148,10 @@
   .thumbs_up {
     width: 120px;
     height: 120px;
+  }
+
+  #success-banner {
+      height: 675px;
   }
 }
 

@@ -301,10 +301,10 @@ else {
 
     next_0.click(function(e){
         e.preventDefault();
-        if (validate_manpower_form()) {
+        // if (validate_manpower_form()) {
           $(".carousel").carousel("next");
           window.scrollTo(0, 0);
-        }
+        // }
     });
 
     // 1
@@ -313,10 +313,10 @@ else {
 
     next_1.click(function(e){
         e.preventDefault();
-        if (validate_personal_information_form()) {
+        // if (validate_personal_information_form()) {
           $(".carousel").carousel("next");
           window.scrollTo(0, 0);
-        }
+        // }
     });
 
     prev_1.click(function(e){
@@ -385,6 +385,10 @@ document.getElementById("yes_ncae").addEventListener('change', () => {
     $('#where_ncae').prop('disabled', false);
 });
 
+document.getElementById("applicant_registration_form").addEventListener('submit', (event) => {
+    event.preventDefault();
+});
+
 document.getElementById("submit_btn").addEventListener('click', (event) => {
     event.preventDefault();
     if (validate_final_form()) {
@@ -409,7 +413,7 @@ document.getElementById("submit_btn").addEventListener('click', (event) => {
         let birthdate = $("#birthdate");
         let attainment = $("#attainment");
         let birthplace_province = $("#province_bdate");
-        let birthplace_city_municipality = $("#city_bdate_exclamation");
+        let birthplace_city_municipality = $("#city_bdate");
 
         // form_3
         let client_classification = $('#client_classification');
@@ -425,40 +429,46 @@ document.getElementById("submit_btn").addEventListener('click', (event) => {
             url: '/registration/',
             data: {
                 // form 1 data
-                first_name: first_name.val(),
-                middle_name: middle_name.val(),
-                last_name: last_name.val(),
-                house_street: house_street.val(),
-                barangay: barangay.val(),
-                district: district.val(),
-                province: province.val(),
-                city_municipality: city_municipality.val(),
-                email_fb: email_fb.val(),
-                contact: contact.val(),
-                nationality: nationality.val(),
+                'first_name': first_name.val(),
+                'middle_name': middle_name.val(),
+                'last_name': last_name.val(),
+                'house_street': house_street.val(),
+                'barangay': barangay.val(),
+                'district': district.val(),
+                'province': province.val(),
+                'city_municipality': city_municipality.val(),
+                'email_fb': email_fb.val(),
+                'contact': contact.val(),
+                'nationality': nationality.val(),
 
                 //form 2 data
-                sex: sex.value,
-                civil_Status: civil_status.value,
-                employment_status: employment_status.value,
-                birthdate: birthdate.val(),
-                attainment: attainment.val(),
-                birthplace_province: birthplace_province.val(),
-                birthplace_city_municipality: birthplace_city_municipality.val(),
+                'sex': sex.value,
+                'civil_status': civil_status.value,
+                'employment_status': employment_status.value,
+                'birthdate': birthdate.val(),
+                'attainment': attainment.val(),
+                'birthplace_province': birthplace_province.val(),
+                'birthplace_city_municipality': birthplace_city_municipality.val(),
 
                 //form 3 data
-                client_classification: client_classification.val(),
-                taken_ncae: taken_ncae.value,
-                where_ncae: where_ncae.val(),
-                when_ncae: when_ncae.val(),
-                course: course.val(),
-                csrfmiddlewaretoken: $('input[name=csrfmiddlewaretoken]').val()
+                'client_classification': client_classification.val(),
+                'taken_ncae': taken_ncae.value,
+                'where_ncae': where_ncae.val(),
+                'when_ncae': when_ncae.val(),
+                'course': course.val(),
+                'csrfmiddlewaretoken': $('input[name=csrfmiddlewaretoken]').val()
 
             },
-            success: (result) => {
-                console.log(result)
-                $("#success-banner").fadeIn().css("display", "grid");
-                 window.scrollTo(0, 0);
+            dataType: 'json',
+            success: function (data) {
+                console.log(data);
+                if (data.message === 'ok') {
+                    $("#success-banner").fadeIn().css("display", "grid");
+                    window.scrollTo(0, 0);
+                }
+                else {
+                    display_warning_final_form();
+                }
             }
         });
     }
