@@ -94,7 +94,7 @@
                             <h5 class="text-secondary">Other Information</h5>
                                 <div class="row">
                                     <div class="col-sm-4">
-                                        <input type="text" class="form-control" id="email_fb" name="email_fb" placeholder="Email/Facebook Account">
+                                        <input type="text" class="form-control" id="email_fb" name="email_fb" placeholder="Email">
                                         <span class="fa fa-exclamation errspan text-danger fa-2x" id="email_fb_exclamation"></span>
                                         <br>
                                     </div>
@@ -123,6 +123,7 @@
                             </div>
                         </div>
                     </div>
+
                     <div class="text-center">
                         <div class="btn-group">
                             <a class="button-prev" href="#learners_profile_form" id="prev_0_btn" role="button">
@@ -132,8 +133,11 @@
                                  <button class="btn btn-info">Next</button>
                             </a>
                         </div>
-                    </div>
-                        <br>
+                    </div><br>
+                            <div class="text-center">
+                                <a class="text-info" href="{% url 'landing_page' %}">
+                                    <i class="fa fa-home fa-2x"></i></a><br><br>
+                            </div>
                 </div>
 </div>
 

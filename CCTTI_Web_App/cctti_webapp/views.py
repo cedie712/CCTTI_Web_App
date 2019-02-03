@@ -2,8 +2,12 @@ from django.shortcuts import render
 from django.http import JsonResponse
 import json
 import os
-from pprint import pprint
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+from random import randint
+from . models import ApplicantInformation
+from datetime import datetime
+from pytz import timezone
+from dateutil.parser import parse
 
 
 # Create your views here.
@@ -17,10 +21,6 @@ def courses_page(request):
 
 def applicant_registration(request):
     if request.method == 'POST':
-        with open(os.path.join(BASE_DIR, 'cctti_webapp', 'static', 'cctti_webapp', 'js', 'verification_codes.json')) as f:
-            data = json.load(f)
-        pprint(data)
-
         # form data 1
         first_name = request.POST['first_name']
         middle_name = request.POST['middle_name']
@@ -52,6 +52,19 @@ def applicant_registration(request):
 
         has_taken_ncae = False
 
+        # verification code
+        v_code = randint(100000, 900000)
+        with open(os.path.join(BASE_DIR, 'cctti_webapp', 'verification_codes.json'), 'r') as v_codes:
+            data = json.load(v_codes)
+
+        while v_code in data['verification_codes']:
+            v_code = randint(100000, 900000)
+
+        with open(os.path.join(BASE_DIR, 'cctti_webapp', 'verification_codes.json'), 'w+') as v_codes:
+            data['verification_codes'].append(v_code)
+            v_codes.write(json.dumps(data))
+        # verification code
+
         data_list = [first_name, middle_name, last_name, house_street, barangay, district, province, city_municipality,
                      email_fb, contact, nationality, sex, civil_status, employment_status, birthdate, attainment,
                      birthplace_province, birthplace_city_municipality, client_classification, taken_ncae, course]
@@ -66,8 +79,46 @@ def applicant_registration(request):
             data = {'message': 'bad request'}
             return JsonResponse(data)
 
+        # Save to db here
+        print(birthdate)
+        applicant_info_object = ApplicantInformation.objects.create(
+            is_verified=False,
+            reference_code=v_code,
+            sign_up_date=datetime.now(timezone('UTC')),
+            first_name=first_name,
+            middle_name=middle_name,
+            last_name=last_name,
+            house_number_street=house_street,
+            barangay=barangay,
+            district=district,
+            city_municipality=city_municipality,
+            province=province.split(' - ')[0],
+            region=province.split(' - ')[1],
+            email_address_or_fb=email_fb,
+            contact_number=contact,
+            nationality=nationality,
 
+            gender=sex,
+            civil_status=civil_status,
+            employment_status=employment_status,
+            birth_date=parse(birthdate).strftime("%B-%d-%Y"),
+            birth_place_city_municipality=birthplace_city_municipality,
+            birth_place_province=birthplace_province.split(' - ')[0],
+            birth_place_region=birthplace_province.split(' - ')[1],
+            educational_attainment=attainment,
 
-        return JsonResponse({'message': 'ok'})
+            client_classification=client_classification,
+
+            has_taken=has_taken_ncae,
+            taken_this_when=when_ncae,
+            taken_this_where=where_ncae,
+
+            course=course
+        )
+
+        applicant_info_object.save()
+
+        return JsonResponse({'message': 'ok', 'verification_code': v_code})
+
     return render(request, 'cctti_webapp/components/registration.html')
 

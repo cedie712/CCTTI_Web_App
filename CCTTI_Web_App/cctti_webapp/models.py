@@ -13,6 +13,7 @@ class UserExt(models.Model):
 
 class ApplicantInformation(models.Model):
     is_verified = models.BooleanField(default=False)
+    reference_code = models.IntegerField(blank=True, null=True)
     sign_up_date = models.DateTimeField(blank=True, null=True)
 
     # Manpower Profile
@@ -25,8 +26,7 @@ class ApplicantInformation(models.Model):
     city_municipality = models.CharField(max_length=128, blank=True, null=True)
     province = models.CharField(max_length=128, blank=True, null=True)
     region = models.CharField(max_length=128, blank=True, null=True)
-    email_address = models.CharField(max_length=128, blank=True, null=True)
-    fb_account = models.CharField(max_length=128, blank=True, null=True)
+    email_address_or_fb = models.CharField(max_length=128, blank=True, null=True)
     contact_number = models.CharField(max_length=128, blank=True, null=True)
     nationality = models.CharField(max_length=128, blank=True, null=True)
 
@@ -34,7 +34,7 @@ class ApplicantInformation(models.Model):
     gender = models.CharField(max_length=128, blank=True, null=True)
     civil_status = models.CharField(max_length=128, blank=True, null=True)
     employment_status = models.CharField(max_length=128, blank=True, null=True)
-    birth_date = models.DateField(blank=True, null=True)
+    birth_date = models.CharField(max_length=128, blank=True, null=True)
     birth_place_city_municipality = models.CharField(max_length=128, blank=True, null=True)
     birth_place_province = models.CharField(max_length=128, blank=True, null=True)
     birth_place_region = models.CharField(max_length=128, blank=True, null=True)
@@ -46,7 +46,7 @@ class ApplicantInformation(models.Model):
     # has taken NCAE/YP4SC before?
     has_taken = models.BooleanField(default=False)
     taken_this_where = models.CharField(max_length=128, blank=True, null=True)
-    taken_this_when = models.DateField(blank=True, null=True)
+    taken_this_when = models.CharField(max_length=128, blank=True, null=True)
 
     # Course
     course = models.CharField(max_length=128, blank=True, null=True)

@@ -27,6 +27,7 @@
                   {#Manpower Profile#}
                     {% include 'cctti_webapp/components/registration/manpower.html' %}
                   {#Manpower Profile#}
+
               </div>
               <!-- Slide Two - Set the background image for this slide in the line below -->
               <div class="carousel-item" style="">
@@ -39,6 +40,7 @@
                   {#Final Information#}
                     {% include 'cctti_webapp/components/registration/final_form.html' %}
                   {#Final Information#}
+
               </div>
             </div>
 
@@ -54,9 +56,11 @@
                     <div class="col-sm-8 offset-sm-2 offset-sm-2 text-center">
                         <img class="img img-responsive thumbs_up" src="{% static 'cctti_webapp/website_photos/thumbs-up-icon.png' %}">
                         <br><br>
-                        <h3 class="text-info">Your Application was Submitted!</h3>
+                        <h3 class="text-info">Reference Code: <span class="text-orange" id="v_code">9093403</span></h3>
                         <p class="text-white">Visit us at 3rd Floor, Planters Bldg, Tinio Street, San Vicente, Gapan City, Nueva Ecija <br>
-                        to complete your registration process<br><br>
+                        to complete your registration process. Present the reference
+                            code to us so we can process your application faster. If the email address you provide do exists, We had
+                            e-mailed you the code.<br><br>
 
                         <span class="text-info">Bring the following requirements:</span><br>
                         <span class="text-white">
@@ -67,8 +71,8 @@
                             Copy of NSO or PSA
                         </span>
                         </p>
-                        <a href="{% url 'landing_page' %}">
-                            <button class="btn btn-info">Home</button>
+                        <a href="{% url 'landing_page' %}" class="text-info">
+                            <i class="fa fa-home fa-3x"></i>
                         </a>
                     </div>
                 </div>

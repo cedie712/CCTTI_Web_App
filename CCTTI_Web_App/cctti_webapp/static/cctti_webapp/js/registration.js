@@ -301,10 +301,10 @@ else {
 
     next_0.click(function(e){
         e.preventDefault();
-        // if (validate_manpower_form()) {
+        if (validate_manpower_form()) {
           $(".carousel").carousel("next");
           window.scrollTo(0, 0);
-        // }
+        }
     });
 
     // 1
@@ -313,10 +313,10 @@ else {
 
     next_1.click(function(e){
         e.preventDefault();
-        // if (validate_personal_information_form()) {
+        if (validate_personal_information_form()) {
           $(".carousel").carousel("next");
           window.scrollTo(0, 0);
-        // }
+        }
     });
 
     prev_1.click(function(e){
@@ -464,6 +464,7 @@ document.getElementById("submit_btn").addEventListener('click', (event) => {
                 console.log(data);
                 if (data.message === 'ok') {
                     $("#success-banner").fadeIn().css("display", "grid");
+                    document.getElementById("v_code").innerHTML = data.verification_code;
                     window.scrollTo(0, 0);
                 }
                 else {
