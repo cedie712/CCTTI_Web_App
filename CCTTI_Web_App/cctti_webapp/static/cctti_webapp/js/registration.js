@@ -35,7 +35,7 @@ function validate_manpower_form() {
     let nationality = document.getElementById("nationality").value;
 
     let input_list = [last_name, first_name, house_street, barangay, district,
-                        province, city_municipality, email_fb, contact, nationality];
+                        province, city_municipality, contact, nationality];
 
     let check_empty = input_list.filter((value, index, array) => {
         if (value === '') {
@@ -45,7 +45,6 @@ function validate_manpower_form() {
 
 
     if (check_empty.length !== 0) {
-
             if (last_name === '') {
                 let exclamation = $("#last_name_exclamation");
                 exclamation.fadeIn();
@@ -88,11 +87,12 @@ function validate_manpower_form() {
                exclamation.fadeOut();
             }
 
-            if (email_fb === '') {
-               let exclamation = $("#email_fb_exclamation");
-               exclamation.fadeIn();
-               exclamation.fadeOut();
-            }
+            // if (email_fb === '') {
+            //    let exclamation = $("#email_fb_exclamation");
+            //    exclamation.fadeIn();
+            //    exclamation.fadeOut();
+            // }
+
             if (contact === '') {
                let exclamation = $("#contact_exclamation");
                exclamation.fadeIn();
@@ -474,6 +474,7 @@ document.getElementById("submit_btn").addEventListener('click', (event) => {
                 }
                 else {
                     display_warning_final_form();
+                    $('#submit_btn').prop('disabled', false);
                 }
             }
         });

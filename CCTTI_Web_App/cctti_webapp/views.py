@@ -67,7 +67,7 @@ def applicant_registration(request):
         # verification code
 
         data_list = [first_name, middle_name, last_name, house_street, barangay, district, province, city_municipality,
-                     email_fb, contact, nationality, sex, civil_status, employment_status, birthdate, attainment,
+                     contact, nationality, sex, civil_status, employment_status, birthdate, attainment,
                      birthplace_province, birthplace_city_municipality, client_classification, taken_ncae, course]
 
         if request.POST['taken_ncae'] == 'yes':
