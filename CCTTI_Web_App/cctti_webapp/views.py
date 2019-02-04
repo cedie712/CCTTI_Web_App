@@ -8,6 +8,7 @@ from . models import ApplicantInformation
 from datetime import datetime
 from pytz import timezone
 from dateutil.parser import parse
+from django.core.mail import send_mail
 
 
 # Create your views here.
@@ -117,6 +118,16 @@ def applicant_registration(request):
         )
 
         applicant_info_object.save()
+
+        send_mail(
+            'CCTTI Application Process',
+            'Reference Code: %i \n Visit us at 3rd Floor, Planters Bldg, Tinio Street, San Vicente, Gapan City, '
+            'Nueva Ecija to complete your registration process. Present the reference code to us so we can process your '
+            'application faster. Thank You!' % v_code,
+            'CCTTI',
+            [email_fb],
+            fail_silently=True,
+        )
 
         return JsonResponse({'message': 'ok', 'verification_code': v_code})
 

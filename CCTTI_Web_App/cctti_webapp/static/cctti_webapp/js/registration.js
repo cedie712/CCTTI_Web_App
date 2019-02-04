@@ -391,7 +391,11 @@ document.getElementById("applicant_registration_form").addEventListener('submit'
 
 document.getElementById("submit_btn").addEventListener('click', (event) => {
     event.preventDefault();
+
     if (validate_final_form()) {
+
+        $("#loading-div").fadeIn();
+         $('#submit_btn').prop('disabled', true);
         //FORM DATA
         // form_1
         let first_name = $("#first_name");
@@ -462,6 +466,7 @@ document.getElementById("submit_btn").addEventListener('click', (event) => {
             dataType: 'json',
             success: function (data) {
                 console.log(data);
+                $("#loading-div").fadeOut();
                 if (data.message === 'ok') {
                     $("#success-banner").fadeIn().css("display", "grid");
                     document.getElementById("v_code").innerHTML = data.verification_code;
