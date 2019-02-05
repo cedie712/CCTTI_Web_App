@@ -1,0 +1,33 @@
+{% extends 'cctti_webapp/frame_B.html' %}
+{% load staticfiles %}
+
+{% block title %}
+    CCTTI | Home
+{% endblock %}
+
+{% block content %}
+    {% include 'cctti_webapp/components/staff_nav.html' %}
+    <br>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3">
+
+                    <nav class="nav flex-column nav-pills">
+                      <a class="nav-link active bg-info side-link" href="#"><i class="fa fa-dashboard"></i>&nbsp;Overview</a>
+                      <a class="nav-link text-dark side-link" href="#"><i class="fa fa-check"></i>&nbsp;Verified Students</a>
+                      <a class="nav-link text-dark side-link" href="#"><i class="fa fa-users"></i>&nbsp;Applicants</a>
+                      <a class="nav-link text-dark side-link" href="#"><i class="fa fa-newspaper-o"></i>&nbsp;Feeds</a>
+                    </nav>
+
+            </div>
+            <div class="col-sm-9">
+
+
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+
+{% endblock %}

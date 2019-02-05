@@ -133,3 +133,10 @@ def applicant_registration(request):
 
     return render(request, 'cctti_webapp/components/registration.html')
 
+
+# # # # # # # # # # # STAFF PAGES # # # # # # # # # # #
+
+def index(request):
+    return render(request, 'cctti_webapp/components/staff_index.html')
+
+# # # # # # # # # # # STAFF PAGES # # # # # # # # # # #

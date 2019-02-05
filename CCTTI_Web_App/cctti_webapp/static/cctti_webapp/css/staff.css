@@ -1,0 +1,7 @@
+.bg-blue-dark {
+    background-color: #0c242c;
+}
+
+.side-link:hover {
+    background-color: rgba(128, 128, 128, 0.25);
+}

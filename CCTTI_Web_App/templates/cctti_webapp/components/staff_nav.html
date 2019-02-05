@@ -1,0 +1,42 @@
+
+
+{% load staticfiles %}
+
+<nav class="navbar navbar-fixed-top navbar-expand-lg navbar-dark bg-blue-dark">
+    <div class="container-fluid">
+{#    <img src="{% static 'cctti_webapp/website_photos/cctti.png' %}"#}
+{#         width="60" height="60" class="d-inline-block align-top" alt="">#}
+    <a class="navbar-brand" href="{% url 'landing_page' %}">
+        <i class="fa fa-graduation-cap"></i>&nbsp;CCTTI
+    </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse text-right" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="#">
+            <i class="fa fa-user-plus text-orange fa-2x"></i> <span class="sr-only">(current)</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">
+            <i class="fa fa-bell text-yellow fa-2x"></i> <span class="sr-only">(current)</span>
+        </a>
+      </li>
+
+    </ul>
+
+    <span class="nav-item text-secondary mr-sm-4">Administrator Account</span>
+    <div class="my-2 my-lg-0">
+      <a href="{% url 'landing_page' %}#tesda-block">
+          <button class="btn btn-info my-2 my-sm-0" id="staff-s">
+              <i class="fa fa-sign-out"></i>&nbsp;Logout</button>
+      </a>
+    </div>
+  </div>
+        </div>
+
+
+</nav>
