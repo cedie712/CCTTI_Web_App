@@ -1,18 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b77e316d-9989-4f3b-9a67-696b33f558fb" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cctti_webapp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/cctti_webapp/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cctti_webapp/static/cctti_webapp/css/landing_page.css" beforeDir="false" afterPath="$PROJECT_DIR$/cctti_webapp/static/cctti_webapp/css/landing_page.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cctti_webapp/static/cctti_webapp/css/registration.css" beforeDir="false" afterPath="$PROJECT_DIR$/cctti_webapp/static/cctti_webapp/css/registration.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cctti_webapp/static/cctti_webapp/js/registration.js" beforeDir="false" afterPath="$PROJECT_DIR$/cctti_webapp/static/cctti_webapp/js/registration.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cctti_webapp/static/cctti_webapp/js/verification_codes.json" beforeDir="false" afterPath="$PROJECT_DIR$/cctti_webapp/verification_codes.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cctti_webapp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/cctti_webapp/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/cctti_webapp/components/main_nav.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/cctti_webapp/components/main_nav.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/cctti_webapp/components/registration.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/cctti_webapp/components/registration.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/cctti_webapp/components/registration/manpower.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/cctti_webapp/components/registration/manpower.html" afterDir="false" />
-    </list>
+    <list default="true" id="b77e316d-9989-4f3b-9a67-696b33f558fb" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,7 +95,8 @@
           <entry key="project.open.time.52" value="1" />
           <entry key="project.open.time.56" value="1" />
           <entry key="project.open.time.80" value="1" />
-          <entry key="project.opened" value="6" />
+          <entry key="project.open.time.96" value="1" />
+          <entry key="project.opened" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -158,7 +148,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cctti_webapp/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
+            <state relative-caret-position="105">
               <caret line="8" selection-start-line="8" selection-end-line="8" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
@@ -170,7 +160,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cctti_webapp/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-75">
+            <state relative-caret-position="1500">
               <caret line="103" column="58" selection-start-line="103" selection-start-column="58" selection-end-line="103" selection-end-column="58" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
@@ -261,6 +251,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -337,7 +328,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -440,11 +430,11 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1366" height="768" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4976526" visible="true" weight="0.27651516" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4976526" visible="true" weight="0.2810606" />
       <window_info id="Favorites" order="1" side_tool="true" />
       <window_info id="Structure" order="2" sideWeight="0.5023474" weight="0.32954547" />
-      <window_info anchor="bottom" id="Database Console" weight="0.3286385" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.3286385" />
@@ -458,6 +448,7 @@
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Terminal" order="11" weight="0.5054773" />
       <window_info anchor="bottom" id="Python Console" order="12" />
+      <window_info anchor="bottom" id="Database Console" order="13" weight="0.3286385" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -590,7 +581,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cctti_webapp/verification_codes.json" />
     <entry file="file://$PROJECT_DIR$/templates/cctti_webapp/components/main_nav.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -647,26 +637,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cctti_webapp/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cctti_webapp/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-75">
-          <caret line="103" column="58" selection-start-line="103" selection-start-column="58" selection-end-line="103" selection-end-column="58" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/cctti_webapp/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
@@ -685,6 +655,26 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="1" column="39" lean-forward="true" selection-start-line="1" selection-start-column="39" selection-end-line="1" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cctti_webapp/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cctti_webapp/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1500">
+          <caret line="103" column="58" selection-start-line="103" selection-start-column="58" selection-end-line="103" selection-end-column="58" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
