@@ -8,6 +8,7 @@ from . models import ApplicantInformation
 from datetime import datetime
 from pytz import timezone
 from dateutil.parser import parse
+from django.core.mail import send_mail
 
 
 # Create your views here.
@@ -66,7 +67,7 @@ def applicant_registration(request):
         # verification code
 
         data_list = [first_name, middle_name, last_name, house_street, barangay, district, province, city_municipality,
-                     email_fb, contact, nationality, sex, civil_status, employment_status, birthdate, attainment,
+                     contact, nationality, sex, civil_status, employment_status, birthdate, attainment,
                      birthplace_province, birthplace_city_municipality, client_classification, taken_ncae, course]
 
         if request.POST['taken_ncae'] == 'yes':
@@ -117,6 +118,16 @@ def applicant_registration(request):
         )
 
         applicant_info_object.save()
+
+        send_mail(
+            'CCTTI Application Process',
+            'Reference Code: %i \n Visit us at 3rd Floor, Planters Bldg, Tinio Street, San Vicente, Gapan City, '
+            'Nueva Ecija to complete your registration process. Present the reference code to us so we can process your '
+            'application faster. Thank You!' % v_code,
+            'CCTTI',
+            [email_fb],
+            fail_silently=True,
+        )
 
         return JsonResponse({'message': 'ok', 'verification_code': v_code})
 

@@ -115,6 +115,10 @@
 }
 /* success_banner */
 
+#loading-div {
+  display: none;
+}
+
 
 
 @media (max-width: 700px) {
