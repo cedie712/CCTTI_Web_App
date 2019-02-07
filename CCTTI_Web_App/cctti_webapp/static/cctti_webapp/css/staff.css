@@ -1,7 +1,39 @@
+body {
+    background-color: #dfdfdf;
+}
+
 .bg-blue-dark {
     background-color: #0c242c;
 }
 
 .side-link:hover {
     background-color: rgba(128, 128, 128, 0.25);
+}
+
+.mobile-top-links {
+    display: none;
+}
+
+.notice-card {
+    /*background-color: white;*/
+    min-height: 200px;
+    min-width: 200px;
+    padding: 30px;
+}
+
+.graph-container {
+    background-color: white;
+}
+
+
+@media (max-width: 700px) {
+    .mobile-top-links {
+        display: flex;
+        /*margin-top: -20px;*/
+        background-color: whitesmoke;
+    }
+
+    .default-links {
+        display: none;
+    }
 }
