@@ -1,5 +1,9 @@
 from django.shortcuts import render
 from django.http import JsonResponse
+
+# Models
+from . models import ApplicantInformation
+
 import json
 import os
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -138,5 +142,10 @@ def applicant_registration(request):
 
 def index(request):
     return render(request, 'cctti_webapp/components/staff_index.html')
+
+
+def applicants(request):
+    applicant_objects = ApplicantInformation.objects.all()
+    return render(request, 'cctti_webapp/components/applicants_view.html', context={'applicant_objects': applicant_objects})
 
 # # # # # # # # # # # STAFF PAGES # # # # # # # # # # #

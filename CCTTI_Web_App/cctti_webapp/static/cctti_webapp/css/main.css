@@ -23,6 +23,10 @@
     text-shadow: 2px 2px rgba(51, 48, 52, 0.35);
 }
 
+.text-dark-blue {
+    color: #0c242c;
+}
+
 .footer{
     background-color: #1c1c1c;
 }
