@@ -50,3 +50,4 @@ class ApplicantInformation(models.Model):
 
     # Course
     course = models.CharField(max_length=128, blank=True, null=True)
+    lrn = models.CharField(max_length=128, blank=True, null=True)

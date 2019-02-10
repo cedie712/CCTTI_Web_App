@@ -145,7 +145,7 @@ def index(request):
 
 
 def applicants(request):
-    applicant_objects = ApplicantInformation.objects.all()
+    applicant_objects = ApplicantInformation.objects.all().exclude(is_verified=True)
     return render(request, 'cctti_webapp/components/applicants_view.html', context={'applicant_objects': applicant_objects})
 
 # # # # # # # # # # # STAFF PAGES # # # # # # # # # # #

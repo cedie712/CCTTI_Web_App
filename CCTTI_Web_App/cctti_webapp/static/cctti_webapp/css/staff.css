@@ -37,3 +37,11 @@ body {
         display: none;
     }
 }
+
+#lrn {
+    margin-top: 5px;
+}
+
+#verify-applicant {
+    margin-top: 10px;
+}

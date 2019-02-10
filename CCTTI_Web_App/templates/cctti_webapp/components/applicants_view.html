@@ -48,45 +48,46 @@
 
                         <div class="card-body">
         <table width="100%" class="table table-striped table-hover table-responsive" id="table_applicants">
-                                <thead>
+                                <thead class="bg-dark">
                                     <tr>
-                                        <th>Reference Code</th>
-                                        <th>Date of Signup</th>
-                                        <th>Last Name</th>
-                                        <th>First Name</th>
-                                        <th>Middle Name</th>
-                                        <th>Course</th>
-                                        <th>Region</th>
-                                        <th>Province</th>
-                                        <th>City/Municipality</th>
-                                        <th>District</th>
-                                        <th>House Number/Street</th>
-                                        <th>Barangay</th>
-                                        <th>Email</th>
-                                        <th>Contact Number</th>
-                                        <th>Sex</th>
-                                        <th>Civil Status</th>
-                                        <th>Employment Status</th>
-                                        <th>Birthdate</th>
-                                        <th>Educational Attainment Before the Training</th>
-                                        <th>Birthplace Region</th>
-                                        <th>Birthplace Province</th>
-                                        <th>Birthplace City</th>
-                                        <th>Learner/Trainee/Student (Clients) Classification</th>
-                                        <th>Taken NCAE/YP4SC Before?</th>
-                                        <th>Where (Taken NCAE/YP4SC Before)</th>
-                                        <th>When (Taken NCAE/YP4SC Before)</th>
+                                        <th class="text-white">Reference Code</th>
+                                        <th class="text-white">Last Name</th>
+                                        <th class="text-white">First Name</th>
+                                        <th class="text-white">Middle Name</th>
+                                        <th class="text-white">Course</th>
+                                        <th class="text-white">Date of Signup</th>
+                                        <th class="text-white">Region</th>
+                                        <th class="text-white">Province</th>
+                                        <th class="text-white">City/Municipality</th>
+                                        <th class="text-white">District</th>
+                                        <th class="text-white">House Number/Street</th>
+                                        <th class="text-white">Barangay</th>
+                                        <th class="text-white">Email</th>
+                                        <th class="text-white">Contact Number</th>
+                                        <th class="text-white">Sex</th>
+                                        <th class="text-white">Civil Status</th>
+                                        <th class="text-white">Employment Status</th>
+                                        <th class="text-white">Birthdate</th>
+                                        <th class="text-white">Educational Attainment Before the Training</th>
+                                        <th class="text-white">Birthplace Region</th>
+                                        <th class="text-white">Birthplace Province</th>
+                                        <th class="text-white">Birthplace City</th>
+                                        <th class="text-white">Learner/Trainee/Student (Clients) Classification</th>
+                                        <th class="text-white">Taken NCAE/YP4SC Before?</th>
+                                        <th class="text-white">Where (Taken NCAE/YP4SC Before)</th>
+                                        <th class="text-white">When (Taken NCAE/YP4SC Before)</th>
+                                        <th class="text-white">Verification</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                 {% for i in applicant_objects %}
                                     <tr>
                                         <td class="text-info">{{ i.reference_code }}</td>
-                                        <td>{{ i.sign_up_date }}</td>
-                                        <td>{{ i.last_name }}</td>
-                                        <td>{{ i.first_name }}</td>
-                                        <td>{{ i.middle_name }}</td>
+                                        <td class="text-capitalize"><b>{{ i.last_name }}</b></td>
+                                        <td class="text-capitalize"><b>{{ i.first_name }}</b></td>
+                                        <td class="text-capitalize"><b>{{ i.middle_name }}</b></td>
                                         <td>{{ i.course }}</td>
+                                        <td>{{ i.sign_up_date }}</td>
                                         <td>{{ i.region }}</td>
                                         <td>{{ i.province }}</td>
                                         <td>{{ i.city_municipality }}</td>
@@ -111,6 +112,10 @@
                                         {% endif %}</td>
                                         <td>{{ i.taken_this_where }}</td>
                                         <td>{{ i.taken_this_when }}</td>
+                                        <td>
+                                            <input type="text" name="lrn" id="lrn" class="form-control" placeholder="Enter LRN">
+                                            <button id="verify-applicant" class="btn btn-success">Submit</button>
+                                        </td>
                                     </tr>
                                 {% endfor %}
                                 </tbody>
@@ -119,6 +124,7 @@
                         </div>
                         <div class="card-footer">
                             <div class="col-sm-6 offset-sm-3 offset-sm-3">
+                                <label for="course_filter">Course Filter:</label>
                                 <select id="course_filter" class="form-control">
                                     <option value="">All</option>
                                     <option value="Computer Systems Servicing NCII">Computer Systems Servicing NCII</option>

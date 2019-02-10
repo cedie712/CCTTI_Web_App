@@ -5,7 +5,7 @@ $(document).ready(function() {
   });
 
   $('#course_filter').on('change', function () {
-        applicants_datatable.columns(5).search( this.value ).draw();
+        applicants_datatable.columns(4).search( this.value ).draw();
     } );
 });
 
