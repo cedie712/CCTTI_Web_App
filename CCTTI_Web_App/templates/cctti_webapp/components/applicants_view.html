@@ -1,0 +1,154 @@
+{% extends 'cctti_webapp/frame_B.html' %}
+{% load staticfiles %}
+
+{% block title %}
+    CCTTI | Applicants
+{% endblock %}
+
+{% block css %}
+{% endblock %}
+
+{% block content %}
+  {% include 'cctti_webapp/components/staff_nav.html' %}
+    <nav class="nav mobile-top-links justify-content-center">
+        <a class="nav-link text-info" href="{% url 'main' %}"><i class="fa fa-dashboard fa-2x"></i></a>
+        <a class="nav-link text-info" href="#"><i class="fa fa-check fa-2x"></i></a>
+        <a class="nav-link text-blue" href="#"><i class="fa fa-users fa-2x"></i></a>
+        <a class="nav-link text-info" href="#"><i class="fa fa-newspaper-o fa-2x"></i></a>
+        <a class="nav-link text-info" href="#"><i class="fa fa-envelope fa-2x"></i></a>
+    </nav>
+    <br>
+    <div class="container-fluid">
+        <div class="row">
+
+            <div class="col-sm-3">
+
+                    <nav class="nav flex-column nav-pills default-links">
+                      <a class="nav-link text-dark side-link" href="{% url 'main' %}"><i class="fa fa-dashboard"></i>&nbsp;Overview</a>
+                      <a class="nav-link text-dark side-link" href="#"><i class="fa fa-check"></i>&nbsp;Verified Students</a>
+                      <a class="nav-link active bg-info side-link" href="#"><i class="fa fa-users"></i>&nbsp;Applicants</a>
+                      <a class="nav-link text-dark side-link" href="#"><i class="fa fa-newspaper-o"></i>&nbsp;Feeds</a>
+                      <a class="nav-link text-dark side-link" href="#"><i class="fa fa-envelope"></i>&nbsp;Mailer</a>
+                    </nav>
+
+
+
+            </div>
+
+            <div class="col-sm-9">
+
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-sm-12">
+                    <div class="card">
+
+                        <div class="card-header bg-blue-dark">
+                            <h5 class="text-info"><i class="fa fa-users"></i>&nbsp;Applicants</h5>
+                        </div>
+
+                        <div class="card-body">
+        <table width="100%" class="table table-striped table-hover table-responsive" id="table_applicants">
+                                <thead class="bg-dark">
+                                    <tr>
+                                        <th class="text-white">Reference Code</th>
+                                        <th class="text-white">Last Name</th>
+                                        <th class="text-white">First Name</th>
+                                        <th class="text-white">Middle Name</th>
+                                        <th class="text-white">Course</th>
+                                        <th class="text-white">Date of Signup</th>
+                                        <th class="text-white">Region</th>
+                                        <th class="text-white">Province</th>
+                                        <th class="text-white">City/Municipality</th>
+                                        <th class="text-white">District</th>
+                                        <th class="text-white">House Number/Street</th>
+                                        <th class="text-white">Barangay</th>
+                                        <th class="text-white">Email</th>
+                                        <th class="text-white">Contact Number</th>
+                                        <th class="text-white">Sex</th>
+                                        <th class="text-white">Civil Status</th>
+                                        <th class="text-white">Employment Status</th>
+                                        <th class="text-white">Birthdate</th>
+                                        <th class="text-white">Educational Attainment Before the Training</th>
+                                        <th class="text-white">Birthplace Region</th>
+                                        <th class="text-white">Birthplace Province</th>
+                                        <th class="text-white">Birthplace City</th>
+                                        <th class="text-white">Learner/Trainee/Student (Clients) Classification</th>
+                                        <th class="text-white">Taken NCAE/YP4SC Before?</th>
+                                        <th class="text-white">Where (Taken NCAE/YP4SC Before)</th>
+                                        <th class="text-white">When (Taken NCAE/YP4SC Before)</th>
+                                        <th class="text-white">Verification</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                {% for i in applicant_objects %}
+                                    <tr>
+                                        <td class="text-info">{{ i.reference_code }}</td>
+                                        <td class="text-capitalize"><b>{{ i.last_name }}</b></td>
+                                        <td class="text-capitalize"><b>{{ i.first_name }}</b></td>
+                                        <td class="text-capitalize"><b>{{ i.middle_name }}</b></td>
+                                        <td>{{ i.course }}</td>
+                                        <td>{{ i.sign_up_date }}</td>
+                                        <td>{{ i.region }}</td>
+                                        <td>{{ i.province }}</td>
+                                        <td>{{ i.city_municipality }}</td>
+                                        <td>{{ i.district }}</td>
+                                        <td>{{ i.house_number_street }}</td>
+                                        <td>{{ i.barangay }}</td>
+                                        <td>{{ i.email_address_or_fb }}</td>
+                                        <td>{{ i.contact_number }}</td>
+                                        <td>{{ i.gender }}</td>
+                                        <td>{{ i.civil_status }}</td>
+                                        <td>{{ i.employment_status }}</td>
+                                        <td>{{ i.birth_date }}</td>
+                                        <td>{{ i.educational_attainment }}</td>
+                                        <td>{{ i.birth_place_region }}</td>
+                                        <td>{{ i.birth_place_province }}</td>
+                                        <td>{{ i.birth_place_city_municipality }}</td>
+                                        <td>{{ i.client_classification }}</td>
+                                        <td>{% if i.has_taken %}
+                                            Yes
+                                        {% else %}
+                                            No
+                                        {% endif %}</td>
+                                        <td>{{ i.taken_this_where }}</td>
+                                        <td>{{ i.taken_this_when }}</td>
+                                        <td>
+                                            <input type="text" name="lrn" id="lrn" class="form-control" placeholder="Enter LRN">
+                                            <button id="verify-applicant" class="btn btn-success">Submit</button>
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+
+                        </div>
+                        <div class="card-footer">
+                            <div class="col-sm-6 offset-sm-3 offset-sm-3">
+                                <label for="course_filter">Course Filter:</label>
+                                <select id="course_filter" class="form-control">
+                                    <option value="">All</option>
+                                    <option value="Computer Systems Servicing NCII">Computer Systems Servicing NCII</option>
+                                    <option value="Local Guiding Service NCII">Local Guiding Service NCII</option>
+                                    <option value="Events Management Services NCIII">Events Management Services NCIII</option>
+                                    <option value="Bookkeeping NCII">Bookkeeping NCII</option>
+                                    <option value="Electronic Product Assembly and Servicing NCII">Electronic Product Assembly and Servicing NCII</option>
+                                    <option value="Tourism Promotion Services NCII">Tourism Promotion Services NCII</option>
+
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+
+{% block javascripts %}
+    <script src="{% static 'cctti_webapp/js/applicants.js' %}"></script>
+{% endblock %}
+

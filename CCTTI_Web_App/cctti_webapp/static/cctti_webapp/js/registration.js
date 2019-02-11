@@ -235,7 +235,8 @@ function validate_final_form() {
 }
 
 
-if (window.innerWidth > 700) {
+function width_state() {
+    if (window.innerWidth > 700) {
     let prev = $('.carousel-control-prev');
     let next = $(".carousel-control-next");
 
@@ -291,7 +292,7 @@ if (window.innerWidth > 700) {
       }
     });
 }
-else {
+    else {
     let prev = $('.button-prev');
     let next = $(".button-next");
 
@@ -355,6 +356,15 @@ else {
       }
     });
 }
+}
+
+width_state();
+
+
+
+window.onresize = () => {
+    width_state();
+};
 
 
 // populate dropdown city/province

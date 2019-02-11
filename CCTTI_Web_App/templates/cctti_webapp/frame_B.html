@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}{% endblock %}</title>
+    {% load staticfiles %}
+    <link rel="icon" type="png" href="{% static 'cctti_webapp/website_photos/cctti.png' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'cctti_webapp/bootstrap-4.1.1/dist/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'cctti_webapp/Font-Awesome-fa-4/css/font-awesome.min.css' %}">
+
+    {# DATATABLES CSS #}
+    <link rel="stylesheet" type="text/css" href="{% static 'cctti_webapp/datatables/DataTables-1.10.18/css/dataTables.bootstrap4.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'cctti_webapp/datatables/dataTables.responsive.css' %}">
+
+
+{% block css %}
+
+{% endblock %}
+    <link rel="stylesheet" type="text/css" href="{% static 'cctti_webapp/css/main.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'cctti_webapp/css/staff.css' %}">
+</head>
+<body>
+
+    {% block content %}
+
+    {% endblock %}
+
+
+<script src="{% static 'cctti_webapp/js/jquery-3.3.1.min.js' %}"></script>
+<script src="{% static 'cctti_webapp/bootstrap-4.1.1/dist/js/bootstrap.min.js' %}"></script>
+
+{# DATATABLES JS #}
+<script src="{% static 'cctti_webapp/datatables/DataTables-1.10.18/js/jquery.dataTables.min.js' %}"></script>
+<script src="{% static 'cctti_webapp/datatables/DataTables-1.10.18/js/dataTables.bootstrap4.min.js' %}"></script>
+
+<script src="{% static 'cctti_webapp/datatables/dataTables.responsive.js' %}"></script>
+
+<script src="{% static 'cctti_webapp/js/main.js' %}"></script>
+
+
+
+{% block javascripts %}
+{% endblock %}
+</body>
+</html>
