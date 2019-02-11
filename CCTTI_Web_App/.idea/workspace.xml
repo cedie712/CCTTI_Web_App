@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b77e316d-9989-4f3b-9a67-696b33f558fb" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CCTTI_Web_App/email_config.py" beforeDir="false" afterPath="$PROJECT_DIR$/CCTTI_Web_App/email_config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cctti_webapp/static/cctti_webapp/js/registration.js" beforeDir="false" afterPath="$PROJECT_DIR$/cctti_webapp/static/cctti_webapp/js/registration.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cctti_webapp/verification_codes.json" beforeDir="false" afterPath="$PROJECT_DIR$/cctti_webapp/verification_codes.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cctti_webapp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/cctti_webapp/views.py" afterDir="false" />
-    </list>
+    <list default="true" id="b77e316d-9989-4f3b-9a67-696b33f558fb" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,7 +32,7 @@
     <session id="-995368367">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="15" />
+          <entry key="project.closed" value="16" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.2" value="3" />
           <entry key="project.open.time.21" value="1" />
