@@ -95,7 +95,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'cctti_db',
         'USER': 'root',
-        'PASSWORD': 'longview048',
+        'PASSWORD': 'conche',
         'PORT': '',
     }
 }

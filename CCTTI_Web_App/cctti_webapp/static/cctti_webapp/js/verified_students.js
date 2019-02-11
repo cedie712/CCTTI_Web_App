@@ -1,12 +1,10 @@
 $(document).ready(function() {
-  let applicants_datatable = $('#table_applicants').DataTable({
+  let verified_students_datatable = $('#table_verified_students').DataTable({
       responsive: true,
       "order": [ 5, "desc" ],
   });
 
   $('#course_filter').on('change', function () {
-        applicants_datatable.columns(4).search( this.value ).draw();
+        verified_students_datatable.columns(4).search( this.value ).draw();
     } );
 });
-
-

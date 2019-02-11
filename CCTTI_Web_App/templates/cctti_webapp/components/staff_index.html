@@ -9,7 +9,7 @@
     {% include 'cctti_webapp/components/staff_nav.html' %}
     <nav class="nav mobile-top-links justify-content-center">
         <a class="nav-link text-blue" href="#"><i class="fa fa-dashboard fa-2x"></i></a>
-        <a class="nav-link text-info" href="#"><i class="fa fa-check fa-2x"></i></a>
+        <a class="nav-link text-info" href="{% url 'verified_students' %}"><i class="fa fa-check fa-2x"></i></a>
         <a class="nav-link text-info" href="{% url 'applicants' %}"><i class="fa fa-users fa-2x"></i></a>
         <a class="nav-link text-info" href="#"><i class="fa fa-newspaper-o fa-2x"></i></a>
         <a class="nav-link text-info" href="#"><i class="fa fa-envelope fa-2x"></i></a>
@@ -22,7 +22,7 @@
 
                     <nav class="nav flex-column nav-pills default-links">
                       <a class="nav-link active bg-info side-link" href="#"><i class="fa fa-dashboard"></i>&nbsp;Overview</a>
-                      <a class="nav-link text-dark side-link" href="#"><i class="fa fa-check"></i>&nbsp;Verified Students</a>
+                      <a class="nav-link text-dark side-link" href="{% url 'verified_students' %}"><i class="fa fa-check"></i>&nbsp;Verified Students</a>
                       <a class="nav-link text-dark side-link" href="{% url 'applicants' %}"><i class="fa fa-users"></i>&nbsp;Applicants</a>
                       <a class="nav-link text-dark side-link" href="#"><i class="fa fa-newspaper-o"></i>&nbsp;Feeds</a>
                       <a class="nav-link text-dark side-link" href="#"><i class="fa fa-envelope"></i>&nbsp;Mailer</a>
@@ -47,7 +47,7 @@
                         <div class="col-sm-4  justify-content-center">
                             <div class="card notice-card container text-center bg-blue-dark">
                                 <i class="fa fa-users fa-3x text-danger"></i>
-                                <h6 class="display-4 text-white">2083</h6>
+                                <h6 class="display-4 text-white">{{ applicant_count }}</h6>
                                 <p class="text-info">Applicants</p>
                             </div>
                             <br>
@@ -55,7 +55,7 @@
                         <div class="col-sm-4  justify-content-center">
                             <div class="card notice-card container text-center bg-blue-dark">
                                 <i class="fa fa-check fa-3x text-success"></i>
-                                <h6 class="display-4 text-white">2344</h6>
+                                <h6 class="display-4 text-white">{{ verified_student_count }}</h6>
                                 <p class="text-info">Verified Students</p>
                             </div>
                             <br>
@@ -120,4 +120,6 @@ var myChart = new Chart(ctx, {
 });
 
 </script>
+    {% include 'cctti_webapp/components/footer_staff_pages.html' %}
 {% endblock %}
+
