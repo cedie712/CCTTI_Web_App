@@ -50,5 +50,7 @@ class ApplicantInformation(models.Model):
 
     # Course
     course = models.CharField(max_length=128, blank=True, null=True)
+
+    # DJC-98-128-03049-001
     unified_learner_id = models.CharField(max_length=128, blank=True, null=True)
     entry_date = models.DateTimeField(blank=True, null=True)

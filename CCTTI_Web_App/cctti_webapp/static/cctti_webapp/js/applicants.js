@@ -9,4 +9,9 @@ $(document).ready(function() {
     } );
 });
 
-
+//
+// $("#verify-form").onclick = (event) => {
+//     event.preventDefault();
+//     let input = document.getElementById("lrn").value;
+//     console.log(input)
+// };

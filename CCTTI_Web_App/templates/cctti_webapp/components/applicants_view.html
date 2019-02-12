@@ -51,9 +51,9 @@
                                 <thead class="bg-info">
                                     <tr>
                                         <th class="text-white">Reference Code</th>
-                                        <th class="text-white">Last Name</th>
                                         <th class="text-white">First Name</th>
                                         <th class="text-white">Middle Name</th>
+                                        <th class="text-white">Last Name</th>
                                         <th class="text-white">Course</th>
                                         <th class="text-white">Date of Signup</th>
                                         <th class="text-white">Region</th>
@@ -83,9 +83,9 @@
                                 {% for i in applicant_objects %}
                                     <tr>
                                         <td class="text-info">{{ i.reference_code }}</td>
-                                        <td class="text-capitalize"><b>{{ i.last_name }}</b></td>
                                         <td class="text-capitalize"><b>{{ i.first_name }}</b></td>
                                         <td class="text-capitalize"><b>{{ i.middle_name }}</b></td>
+                                        <td class="text-capitalize"><b>{{ i.last_name }}</b></td>
                                         <td>{{ i.course }}</td>
                                         <td>{{ i.sign_up_date }}</td>
                                         <td>{{ i.region }}</td>
@@ -113,8 +113,30 @@
                                         <td>{{ i.taken_this_where }}</td>
                                         <td>{{ i.taken_this_when }}</td>
                                         <td>
-                                            <input type="text" name="lrn" id="lrn" class="form-control" placeholder="Enter Unique Learner Identifier (ULI) Number">
-                                            <button id="verify-applicant" class="btn btn-success">Submit</button>
+                                            Enter Unique Learner Identifier (ULI) Number<br>
+                                            <span class="text-danger">Note: Change the value to the ULI given by TESDA</span>
+                                            <form method="post" action="{% url 'applicants' %}">
+                                                {% csrf_token %}
+                                            <input type="text" name="uli" id="lrn" class="integers form-control"
+                                                   value="{{ i.FFM }}-{{ i.YY }}-XMM-RRPPP-001"
+                                                   placeholder="Enter Unique Learner Identifier (ULI) Number" maxlength="20">
+{#                                            <div class="row">#}
+{#                                                <div class="col-sm-6">#}
+{#                                                    <div class="input-group" id="uli-input">#}
+{#                                                        <input type="text" name="ffm" id="ffm" value="{{ i.FFM }}" class="form-control" placeholder="" maxlength="3">#}
+{#                                                        <span class="uli-dash"><b>-</b></span>#}
+{#                                                        <input type="text" name="yy" id="yy" value="{{ i.YY }}" class="form-control" placeholder="" maxlength="2">#}
+{#                                                        <span class="uli-dash"><b>-</b></span>#}
+{#                                                        <input type="text" name="xmm" id="xmm" value="" class="form-control" placeholder="" maxlength="3">#}
+{#                                                        <span class="uli-dash"><b>-</b></span>#}
+{#                                                        <input type="text" name="rrppp" id="rrppp" value="" class="form-control" placeholder="" maxlength="4">#}
+{#                                                        <span class="uli-dash"><b>-</b></span>#}
+{#                                                        <input type="text" name="nnn" id="nnn" value="001" class="form-control" placeholder="" maxlength="3">#}
+{#                                                    </div>#}
+{#                                                </div>#}
+{#                                            </div>#}
+                                            <button type="submit" id="verify-applicant" class="btn btn-success">Submit</button>
+                                            </form>
                                         </td>
                                     </tr>
                                 {% endfor %}
@@ -133,7 +155,6 @@
                                     <option value="Bookkeeping NCII">Bookkeeping NCII</option>
                                     <option value="Electronic Product Assembly and Servicing NCII">Electronic Product Assembly and Servicing NCII</option>
                                     <option value="Tourism Promotion Services NCII">Tourism Promotion Services NCII</option>
-
                                 </select>
                             </div>
                         </div>
@@ -145,6 +166,28 @@
             </div>
         </div>
     </div>
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="alert-title-modal">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <span class="text-success" id="alert-success">Success</span>
+        <span class="text-danger" id="alert-failed">Success</span>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">ok</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 
     {% include 'cctti_webapp/components/footer_staff_pages.html' %}
 {% endblock %}

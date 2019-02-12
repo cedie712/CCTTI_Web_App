@@ -178,6 +178,22 @@ def index(request):
 
 def applicants(request):
     applicant_objects = ApplicantInformation.objects.all().exclude(is_verified=True)
+
+    middle_char = '*'
+
+    for i in applicant_objects:
+        if i.middle_name is not None or i.middle_name != '':
+            middle_char = i.middle_name[0]
+        i.FFM =  ('%s%s%s' % (i.last_name[0], i.first_name[0], middle_char)).upper()
+        i.YY = i.birth_date[-2:]
+
+    # POST
+    if request.method == 'POST':
+        ULI = request.POST['uli']
+        XMM = ULI.split('-')[2]
+        RRPPP = ULI.split('-')[3]
+        print(XMM, RRPPP)
+
     return render(request, 'cctti_webapp/components/applicants_view.html',
                   context={'applicant_objects': applicant_objects})
 
