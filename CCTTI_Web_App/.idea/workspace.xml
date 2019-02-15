@@ -1,7 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="4ed0e9c4-2230-403d-8bbe-457d37ffd666" name="Default Changelist" comment="" />
+=======
+<<<<<<< HEAD
+    <list default="true" id="b77e316d-9989-4f3b-9a67-696b33f558fb" name="Default Changelist" comment="" />
+=======
+    <list default="true" id="4ed0e9c4-2230-403d-8bbe-457d37ffd666" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/cctti_webapp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/cctti_webapp/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cctti_webapp/static/cctti_webapp/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/cctti_webapp/static/cctti_webapp/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cctti_webapp/static/cctti_webapp/css/staff.css" beforeDir="false" afterPath="$PROJECT_DIR$/cctti_webapp/static/cctti_webapp/css/staff.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cctti_webapp/static/cctti_webapp/js/applicants.js" beforeDir="false" afterPath="$PROJECT_DIR$/cctti_webapp/static/cctti_webapp/js/applicants.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cctti_webapp/verification_codes.json" beforeDir="false" afterPath="$PROJECT_DIR$/cctti_webapp/verification_codes.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cctti_webapp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/cctti_webapp/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/cctti_webapp/components/applicants_view.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/cctti_webapp/components/applicants_view.html" afterDir="false" />
+    </list>
+>>>>>>> f4dcab55298c958ed6194abab46957e2f46e9b7f
+>>>>>>> f980ad47a76223cd47010fc6024d51b291e1225a
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +39,66 @@
     <select />
   </component>
   <component name="FUSProjectUsageTrigger">
+<<<<<<< HEAD
+    <session id="-995368367">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="16" />
+          <entry key="project.open.time.1" value="1" />
+          <entry key="project.open.time.2" value="3" />
+          <entry key="project.open.time.21" value="1" />
+          <entry key="project.open.time.3" value="2" />
+          <entry key="project.open.time.35" value="1" />
+          <entry key="project.open.time.4" value="1" />
+          <entry key="project.open.time.40" value="1" />
+          <entry key="project.open.time.42" value="1" />
+          <entry key="project.open.time.46" value="1" />
+          <entry key="project.open.time.51" value="1" />
+          <entry key="project.open.time.53" value="2" />
+          <entry key="project.open.time.7" value="1" />
+          <entry key="project.open.time.70" value="1" />
+          <entry key="project.open.time.76" value="1" />
+          <entry key="project.open.time.84" value="1" />
+          <entry key="project.opened" value="19" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="css" value="2607" />
+          <entry key="html" value="9675" />
+          <entry key="js" value="4245" />
+          <entry key="py" value="2214" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="CSS" value="2607" />
+          <entry key="HTML" value="9675" />
+          <entry key="JavaScript" value="4245" />
+          <entry key="Python" value="2214" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="css" value="17" />
+          <entry key="html" value="31" />
+          <entry key="jpg" value="1" />
+          <entry key="js" value="10" />
+          <entry key="py" value="20" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="CSS" value="17" />
+          <entry key="HTML" value="31" />
+          <entry key="Image" value="1" />
+          <entry key="JavaScript" value="10" />
+          <entry key="Python" value="20" />
+        </counts>
+      </usages-collector>
+    </session>
+=======
+>>>>>>> f4dcab55298c958ed6194abab46957e2f46e9b7f
     <session id="1544127535">
       <usages-collector id="statistics.lifecycle.project">
         <counts>

@@ -42,6 +42,22 @@ body {
     margin-top: 5px;
 }
 
+.uli-dash {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+#uli-input{
+    margin-top: 5px;
+    /*width: 400px;*/
+}
+
+
+
 #verify-applicant {
     margin-top: 10px;
+}
+
+#alert-success, #alert-failed{
+    display: none;
 }

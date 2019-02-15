@@ -92,9 +92,9 @@ WSGI_APPLICATION = 'CCTTI_Web_App.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'cctti_db',
-        'USER': 'root',
+        'USER': 'postgres',
         'PASSWORD': 'longview048',
         'PORT': '',
     }

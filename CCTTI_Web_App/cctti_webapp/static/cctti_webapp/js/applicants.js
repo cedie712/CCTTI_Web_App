@@ -1,7 +1,7 @@
 $(document).ready(function() {
   let applicants_datatable = $('#table_applicants').DataTable({
       responsive: true,
-      "order": [ 1, "desc" ],
+      "order": [ 5, "desc" ],
   });
 
   $('#course_filter').on('change', function () {
@@ -9,4 +9,9 @@ $(document).ready(function() {
     } );
 });
 
-
+//
+// $("#verify-form").onclick = (event) => {
+//     event.preventDefault();
+//     let input = document.getElementById("lrn").value;
+//     console.log(input)
+// };
