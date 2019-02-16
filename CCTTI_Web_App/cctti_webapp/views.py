@@ -189,10 +189,46 @@ def applicants(request):
 
     # POST
     if request.method == 'POST':
+        applicant_id = request.POST['applicant_id']
+
         ULI = request.POST['uli']
-        XMM = ULI.split('-')[2]
-        RRPPP = ULI.split('-')[3]
-        print(XMM, RRPPP)
+
+        print(applicant_id)
+        print(ULI)
+
+        xmm = ULI.split('-')[2]
+        rrppp = ULI.split('-')[3]
+        overflow = ULI.split('-')[4]
+
+        valid_char = '0123456789'
+
+        for i in xmm:
+            if i not in valid_char:
+                return JsonResponse({'message': 'bad request'})
+
+        for i in rrppp:
+            if i not in valid_char:
+                return JsonResponse({'message': 'bad request'})
+
+        for i in overflow:
+            if i not in valid_char:
+                return JsonResponse({'message': 'bad request'})
+
+        if len(xmm) != 3 or len(rrppp) != 4 or len(overflow) != 3:
+            return JsonResponse({'message': 'bad request'})
+
+        check_uli_existence = ApplicantInformation.objects.filter(unified_learner_id=ULI).exists()
+
+        if check_uli_existence:
+            return JsonResponse({'message': 'duplicate uli'})
+
+        applicant_object = ApplicantInformation.objects.get(id=applicant_id)
+
+        applicant_object.is_verified = True
+        applicant_object.unified_learner_id = ULI
+        applicant_object.save()
+
+        return JsonResponse({'message': 'ok'})
 
     return render(request, 'cctti_webapp/components/applicants_view.html',
                   context={'applicant_objects': applicant_objects})

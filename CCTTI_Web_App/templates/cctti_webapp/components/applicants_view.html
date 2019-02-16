@@ -6,6 +6,7 @@
 {% endblock %}
 
 {% block css %}
+    <script src="{% static 'cctti_webapp/js/jquery-3.3.1.min.js' %}"></script>
 {% endblock %}
 
 {% block content %}
@@ -76,7 +77,7 @@
                                         <th class="text-white">Taken NCAE/YP4SC Before?</th>
                                         <th class="text-white">Where (Taken NCAE/YP4SC Before)</th>
                                         <th class="text-white">When (Taken NCAE/YP4SC Before)</th>
-                                        <th class="text-white">Verification</th>
+                                        <th class="text-white">Verify Applicant</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -113,13 +114,14 @@
                                         <td>{{ i.taken_this_where }}</td>
                                         <td>{{ i.taken_this_when }}</td>
                                         <td>
-                                            Enter Unique Learner Identifier (ULI) Number<br>
-                                            <span class="text-danger">Note: Change the value to the ULI given by TESDA</span>
-                                            <form method="post" action="{% url 'applicants' %}">
-                                                {% csrf_token %}
-                                            <input type="text" name="uli" id="lrn" class="integers form-control"
-                                                   value="{{ i.FFM }}-{{ i.YY }}-XMM-RRPPP-001"
-                                                   placeholder="Enter Unique Learner Identifier (ULI) Number" maxlength="20">
+{#                                            Enter Unique Learner Identifier (ULI) Number<br>#}
+{#                                            <span class="text-danger">Note: Change the value to the ULI given by TESDA</span>#}
+{#                                            <form method="post" action="{% url 'applicants' %}">#}
+{#                                                <form>#}
+{#                                                {% csrf_token %}#}
+{#                                            <input type="text" name="uli" class="uli integers form-control"#}
+{#                                                   value="{{ i.FFM }}-{{ i.YY }}-XMM-RRPPP-001"#}
+{#                                                   placeholder="Enter Unique Learner Identifier (ULI) Number" maxlength="20">#}
 {#                                            <div class="row">#}
 {#                                                <div class="col-sm-6">#}
 {#                                                    <div class="input-group" id="uli-input">#}
@@ -135,10 +137,144 @@
 {#                                                    </div>#}
 {#                                                </div>#}
 {#                                            </div>#}
-                                            <button type="submit" id="verify-applicant" class="btn btn-success">Submit</button>
-                                            </form>
+
+
+                                            <div class="modal fade" id="verify_modal_{{ i.reference_code }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+                                              <div class="modal-dialog" role="document">
+
+                                                      <form id="applicant_verification_form_{{ i.reference_code }}">
+                                                <div class="modal-content bg-blue-dark">
+                                                  <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel"></h5>
+                                                    <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+                                                      <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                  </div>
+                                                  <div class="modal-body">
+                                                      <b class="text-white">{{ i.first_name }} {{ i.middle_name }} {{ i.last_name }}</b>
+                                                      <br>
+                                                      <span class="text-secondary">Reference Code: </span><span class="text-info">{{ i.reference_code }}</span>
+                                                      <br>
+                                                      <br>
+                                                          <b class="text-white">Enter Unique Learner Identifier (ULI) Number</b><br>
+                                            <span class="text-info">Note: Change the value to the ULI given by TESDA</span>
+                                                {% csrf_token %}
+                                                      <div class="input-group">
+                                                          <div class="input-group-prepend">
+                                                          <span class="input-group-text" id="basic-addon3_{{ i.reference_code }}">{{ i.FFM }}-{{ i.YY }}-</span>
+                                                          </div>
+                                                          <input type="text" name="xmm" id="uli_xmm_{{ i.reference_code }}" class="integers form-control"
+                                                   value="XMM" aria-describedby="basic-addon3_{{ i.reference_code }}"
+                                                   placeholder="" maxlength="3">
+                                                     <div class="input-group-prepend">
+                                                          <span class="input-group-text">-</span>
+                                                     </div>
+                                                          <input type="text" name="rrppp" id="uli_rrppp_{{ i.reference_code }}" class="integers form-control"
+                                                   value="RRPPP" aria-describedby="basic-addon3_{{ i.reference_code }}"
+                                                   placeholder="" maxlength="4">
+                                                     <div class="input-group-prepend">
+                                                          <span class="input-group-text">-</span>
+                                                     </div>
+                                                          <input type="text" name="overflow_int" id="uli_overflow_{{ i.reference_code }}" class="integers form-control"
+                                                   value="001" aria-describedby="basic-addon3_{{ i.reference_code }}"
+                                                   placeholder="" maxlength="3">
+                                                      </div>
+
+                                                      <div id="alert-container_{{ i.reference_code }}" style="display: none;">
+                                                          <br>
+                                                        <div class="alert alert-danger"  id="alert_{{ i.reference_code }}" role="alert">
+                                                          This is a danger alert—check it out!
+                                                        </div>
+                                                      </div>
+
+                                                  </div>
+                                                  <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                    <button id="verify-applicant_{{ i.reference_code }}" type="submit" class="btn btn-success">Submit</button>
+                                                  </div>
+                                                    <script>
+                                                        $("#verify-applicant_{{ i.reference_code }}").on('click',  (event) => {
+                                                            event.preventDefault();
+                                                            {#let valid_char = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];#}
+                                                            let valid_char = '0123456789';
+
+                                                            let xmm = $("#uli_xmm_{{ i.reference_code }}").val();
+                                                            let rrppp = $("#uli_rrppp_{{ i.reference_code }}").val();
+                                                            let overflow = $("#uli_overflow_{{ i.reference_code }}").val();
+
+
+                                                            function check(uli_portion) {
+                                                                for (i in uli_portion) {
+                                                                    if (valid_char.indexOf(uli_portion[i]) === -1) {
+                                                                        return false;
+                                                                    }
+                                                                }
+                                                                return true
+                                                            }
+
+                                                            function display_alert(msg) {
+                                                                document.getElementById("alert_{{ i.reference_code }}").
+                                                                    innerHTML = msg;
+                                                                $("#alert-container_{{ i.reference_code }}").fadeIn();
+                                                                window.setTimeout(() => {
+                                                                    $("#alert-container_{{ i.reference_code }}").fadeOut();
+                                                                  },
+                                                                  2500);
+                                                            }
+
+                                                            if (!check(xmm) || !check(rrppp) || !check(overflow)) {
+                                                                display_alert("Invalid ULI");
+                                                            }
+                                                            else if (xmm.length !== 3 || rrppp.length !== 4 || overflow.length !== 3) {
+                                                                console.log('fuck');
+                                                                display_alert("Invalid ULI");
+                                                            }
+                                                            else {
+                                                                $.ajax({
+                                                                    type: 'POST',
+                                                                    url: {% url 'applicants' %},
+                                                                    data: {
+                                                                        // form 1 data
+                                                                        applicant_id: {{ i.id }},
+                                                                        uli: document.getElementById("basic-addon3_{{ i.reference_code }}").innerHTML
+                                                                            + xmm + '-' + rrppp + '-' + overflow,
+                                                                        'csrfmiddlewaretoken': $('input[name=csrfmiddlewaretoken]').val()
+
+                                                                    },
+                                                                    dataType: 'json',
+                                                                    success: function (data) {
+                                                                        console.log(data.message);
+                                                                        if (data.message === 'bad request') {
+                                                                            display_alert("Invalid ULI");
+                                                                        }
+                                                                        else if (data.message === 'duplicate uli') {
+                                                                            display_alert("ULI already exists)");
+                                                                        }
+                                                                        else {
+                                                                            $("#verify_modal_{{ i.reference_code }}").modal('hide');
+                                                                            window.top.location = '/applicants/';
+                                                                        }
+                                                                    }
+                                                                });
+                                                            }
+
+                                                        });
+                                                    </script>
+                                                </div>
+                                                      </form>
+                                              </div>
+                                            </div>
+                                            <br>
+                                            <button class="btn btn-info"
+                                            data-toggle="modal" data-target="#verify_modal_{{ i.reference_code }}">
+                                                <i class="fa fa-check"></i></button>
+
+
+{#                                            </form>#}
                                         </td>
                                     </tr>
+
                                 {% endfor %}
                                 </tbody>
                             </table>
@@ -166,27 +302,6 @@
             </div>
         </div>
     </div>
-
-
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="alert-title-modal">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <span class="text-success" id="alert-success">Success</span>
-        <span class="text-danger" id="alert-failed">Success</span>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">ok</button>
-      </div>
-    </div>
-  </div>
-</div>
 
 
     {% include 'cctti_webapp/components/footer_staff_pages.html' %}
