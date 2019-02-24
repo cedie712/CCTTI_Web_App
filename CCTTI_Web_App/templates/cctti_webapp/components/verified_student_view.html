@@ -51,9 +51,9 @@
                                 <thead class="bg-info">
                                     <tr>
                                         <th class="text-white">Unique Learner Identifier Number</th>
-                                        <th class="text-white">Last Name</th>
                                         <th class="text-white">First Name</th>
                                         <th class="text-white">Middle Name</th>
+                                        <th class="text-white">Last Name</th>
                                         <th class="text-white">Course</th>
                                         <th class="text-white">Entry Date</th>
                                         <th class="text-white">Region</th>
@@ -81,10 +81,10 @@
                                 <tbody>
                                 {% for i in verified_students_objects %}
                                     <tr>
-                                        <td class="text-info">{{ i.unified_learner_id }}</td>
-                                        <td class="text-capitalize"><b>{{ i.last_name }}</b></td>
+                                        <td class="text-info nowrap">{{ i.unified_learner_id }}</td>
                                         <td class="text-capitalize"><b>{{ i.first_name }}</b></td>
                                         <td class="text-capitalize"><b>{{ i.middle_name }}</b></td>
+                                        <td class="text-capitalize"><b>{{ i.last_name }}</b></td>
                                         <td>{{ i.course }}</td>
                                         <td>{{ i.entry_date }}</td>
                                         <td>{{ i.region }}</td>
