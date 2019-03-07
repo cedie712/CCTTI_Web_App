@@ -76,6 +76,7 @@
                                         <th class="text-white">Taken NCAE/YP4SC Before?</th>
                                         <th class="text-white">Where (Taken NCAE/YP4SC Before)</th>
                                         <th class="text-white">When (Taken NCAE/YP4SC Before)</th>
+                                        <th></th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -86,7 +87,7 @@
                                         <td class="text-capitalize"><b>{{ i.middle_name }}</b></td>
                                         <td class="text-capitalize"><b>{{ i.last_name }}</b></td>
                                         <td>{{ i.course }}</td>
-                                        <td>{{ i.entry_date }}</td>
+                                        <td>{{ i.entry_date_formatted }}</td>
                                         <td>{{ i.region }}</td>
                                         <td>{{ i.province }}</td>
                                         <td>{{ i.city_municipality }}</td>
@@ -111,6 +112,54 @@
                                         {% endif %}</td>
                                         <td>{{ i.taken_this_where }}</td>
                                         <td>{{ i.taken_this_when }}</td>
+                                        <td>
+                                            <script>
+                                                function produce_pdf() {
+                                                    console.log('ok');
+                                                    let has_taken = ('{{ i.has_taken }}' === 'True');
+                                                    let first_name = '{{ i.first_name }}';
+                                                    let middle_name = '{{ i.middle_name }}';
+                                                    let last_name = '{{ i.last_name }}';
+                                                    let uli = '{{ i.unified_learner_id }}'
+                                                    let data = {
+                                                        entry_date: '{{ i.entry_date_formatted }}',
+                                                        uli: '{{ i.unified_learner_id }}',
+                                                        first_name: '{{ i.first_name }}',
+                                                        middle_name: '{{ i.middle_name }}',
+                                                        last_name: '{{ i.last_name }}',
+                                                        house_num_street: '{{ i.house_number_street }}',
+                                                        barangay: '{{ i.barangay }}',
+                                                        municipality: '{{ i.city_municipality }}',
+                                                        province: '{{ i.province }}',
+                                                        district: '{{ i.district }}',
+                                                        region: '{{ i.region }}',
+                                                        email: '{{ i.email_address_or_fb }}',
+                                                        contact: '{{ i.contact_number }}',
+                                                        nationality: '{{ i.nationality }}',
+                                                        sex: '{{ i.gender }}',
+                                                        civil_status: '{{ i.civil_status }}',
+                                                        employment_status: '{{ i.employment_status }}',
+                                                        birthdate: '{{ i.birth_date }}',
+                                                        age: '{{ i.age }}',
+                                                        bplace_city_municipality: '{{ i.birth_place_city_municipality }}',
+                                                        bplace_province: '{{ i.birth_place_province }}',
+                                                        bplace_region: '{{ i.birth_place_region }}',
+                                                        attainment: '{{ i.educational_attainment }}',
+                                                        classification: '{{ i.client_classification }}',
+                                                        has_taken: has_taken,
+                                                        has_taken_where: '{{ i.taken_this_where }}',
+                                                        has_taken_when: '{{ i.taken_this_when }}',
+                                                        course: '{{ i.course }}',
+                                                        pdf_name: `${first_name}_${middle_name}_${last_name}_${uli}.pdf`
+                                                    };
+                                                    create_pdf(data);
+                                                }
+                                            </script>
+                                            <br>
+                                            <button class="btn btn-primary" onclick="produce_pdf();">
+                                                <i class="fa fa-download"></i>&nbsp;Download PDF</button>
+                                            <br><br>
+                                        </td>
                                     </tr>
                                 {% endfor %}
                                 </tbody>
@@ -148,5 +197,8 @@
 
 {% block javascripts %}
     <script src="{% static 'cctti_webapp/js/verified_students.js' %}"></script>
+    <script src="{% static 'cctti_webapp/js/create_pdf/' %}jspdf/dist/jspdf.min.js"></script>
+    <script src="{% static 'cctti_webapp/js/create_pdf/' %}filesaver/dist/FileSaver.min.js"></script>
+    <script src="{% static 'cctti_webapp/js/create_pdf/create_pdf.js' %}"></script>
 {% endblock %}
 

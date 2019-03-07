@@ -10,7 +10,7 @@ import json
 import os
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 from random import randint
-from datetime import datetime
+from datetime import datetime, date
 from pytz import timezone
 from dateutil.parser import parse
 from django.core.mail import send_mail
@@ -223,7 +223,7 @@ def applicants(request):
             return JsonResponse({'message': 'duplicate uli'})
 
         applicant_object = ApplicantInformation.objects.get(id=applicant_id)
-
+        applicant_object.entry_date = datetime.now()
         applicant_object.is_verified = True
         applicant_object.unified_learner_id = ULI
         applicant_object.save()
@@ -236,6 +236,17 @@ def applicants(request):
 
 def verified_students(request):
     verified_students_objects = ApplicantInformation.objects.all().exclude(is_verified=False)
+
+    for i in verified_students_objects:
+        today = date.today()
+        age = today.year - parse(i.birth_date).year\
+              - ((today.month, today.day) < (parse(i.birth_date).month, parse(i.birth_date).day))
+        i.age = age
+        try:
+            i.entry_date_formatted = i.entry_date.strftime('%b %d, %Y')
+        except:
+            i.entry_date_formatted = 'None';
+
     return render(request, 'cctti_webapp/components/verified_student_view.html',
                   context={'verified_students_objects': verified_students_objects})
 
