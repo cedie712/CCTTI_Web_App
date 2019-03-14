@@ -2,7 +2,7 @@
 {% load staticfiles %}
 
 {% block title %}
-    CCTTI | Applicants
+    CCTTI | Verified Students
 {% endblock %}
 
 {% block css %}
@@ -14,7 +14,7 @@
         <a class="nav-link text-info" href="{% url 'main' %}"><i class="fa fa-dashboard fa-2x"></i></a>
         <a class="nav-link text-blue" href="#"><i class="fa fa-check fa-2x"></i></a>
         <a class="nav-link text-info" href="{% url 'applicants' %}"><i class="fa fa-users fa-2x"></i></a>
-        <a class="nav-link text-info" href="#"><i class="fa fa-newspaper-o fa-2x"></i></a>
+{#        <a class="nav-link text-info" href="#"><i class="fa fa-newspaper-o fa-2x"></i></a>#}
         <a class="nav-link text-info" href="#"><i class="fa fa-envelope fa-2x"></i></a>
     </nav>
     <br>
@@ -27,7 +27,7 @@
                       <a class="nav-link text-dark side-link" href="{% url 'main' %}"><i class="fa fa-dashboard"></i>&nbsp;Overview</a>
                       <a class="nav-link active bg-info side-link" href="#"><i class="fa fa-check"></i>&nbsp;Verified Students</a>
                       <a class="nav-link text-dark side-link" href="{% url 'applicants' %}"><i class="fa fa-users"></i>&nbsp;Applicants</a>
-                      <a class="nav-link text-dark side-link" href="#"><i class="fa fa-newspaper-o"></i>&nbsp;Feeds</a>
+{#                      <a class="nav-link text-dark side-link" href="#"><i class="fa fa-newspaper-o"></i>&nbsp;Feeds</a>#}
                       <a class="nav-link text-dark side-link" href="#"><i class="fa fa-envelope"></i>&nbsp;Mailer</a>
                     </nav>
 
@@ -43,7 +43,7 @@
                     <div class="card">
 
                         <div class="card-header bg-blue-dark">
-                            <h5 class="text-info"><i class="fa fa-users"></i>&nbsp;Applicants</h5>
+                            <h5 class="text-info"><i class="fa fa-check"></i>&nbsp;Verified Students</h5>
                         </div>
 
                         <div class="card-body">

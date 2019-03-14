@@ -118,9 +118,9 @@ def applicant_registration(request):
             is_verified=False,
             reference_code=v_code,
             sign_up_date=datetime.now(timezone('UTC')),
-            first_name=first_name,
-            middle_name=middle_name,
-            last_name=last_name,
+            first_name=first_name.capitalize(),
+            middle_name=middle_name.capitalize(),
+            last_name=last_name.capitalize(),
             house_number_street=house_street,
             barangay=barangay,
             district=district,
@@ -223,7 +223,7 @@ def applicants(request):
             return JsonResponse({'message': 'duplicate uli'})
 
         applicant_object = ApplicantInformation.objects.get(id=applicant_id)
-        applicant_object.entry_date = datetime.now()
+        applicant_object.entry_date = datetime.now(timezone('UTC'))
         applicant_object.is_verified = True
         applicant_object.unified_learner_id = ULI
         applicant_object.save()
@@ -245,7 +245,7 @@ def verified_students(request):
         try:
             i.entry_date_formatted = i.entry_date.strftime('%b %d, %Y')
         except:
-            i.entry_date_formatted = 'None';
+            i.entry_date_formatted = 'None'
 
     return render(request, 'cctti_webapp/components/verified_student_view.html',
                   context={'verified_students_objects': verified_students_objects})
