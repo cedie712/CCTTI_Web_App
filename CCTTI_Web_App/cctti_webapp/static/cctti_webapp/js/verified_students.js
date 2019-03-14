@@ -1,7 +1,7 @@
 $(document).ready(function() {
   let verified_students_datatable = $('#table_verified_students').DataTable({
       responsive: true,
-      "order": [ 5, "desc" ],
+      "order": [ 3, "desc" ],
   });
 
   $('#course_filter').on('change', function () {

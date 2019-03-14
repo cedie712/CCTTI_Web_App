@@ -208,7 +208,7 @@
 
         // Course
         doc.setFontSize(12);
-        doc.text(51, 246, data.course);
+        doc.text(63, 240.5, data.course);
 
         // pdf_name
         doc.save(data.pdf_name);
