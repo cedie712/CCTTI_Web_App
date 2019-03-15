@@ -75,30 +75,34 @@
                 </div>
 
                 <div class="col-sm-6 card-container">
+                    <form>
+                        {% csrf_token %}
                     <div class="container">
                         <div class="card bg-light signin-card">
                             <div class="card-header">
                                 <h5 class="text-default"><i class="fa fa-sign-in"></i>&nbsp;Staff Sign In</h5>
                             </div>
                             <div class="card-body">
-                        <form>
-                           <input class="form-control" type="text" name="username" placeholder="Username">
+
+                           <input class="form-control" type="text" name="username" id="username" placeholder="Username">
+                                <span class="fa fa-exclamation errspan text-danger fa-2x" id="username_exclamation"></span>
                             <br>
-                            <input class="form-control" type="password" name="password" placeholder="Password">
-                        </form>
+                            <input class="form-control" type="password" name="password" id="password" placeholder="Password">
+                                <span class="fa fa-exclamation errspan text-danger fa-2x" id="password_exclamation"></span>
+                                <br>
+
+                            <div id="signin-alert" class="alert alert-danger" role="alert">
+                            </div>
+
                             </div>
                             <div class="card-footer">
                                 <div class="text-right">
-                                    <button type="submit" class="btn btn-success">Sign-In</button>
+                                    <button type="submit" id="login_btn" class="btn btn-success">Sign-In</button>
                                 </div>
                             </div>
                         </div>
-{#                        <div class="btn-container">#}
-{#                            <a href="{% url 'courses' %}">#}
-{#                                <button class="btn-info-big">Offered Courses</button>#}
-{#                            </a>#}
-{#                        </div>#}
                     </div>
+                    </form>
                 </div>
 
             </div>
@@ -118,4 +122,5 @@
 
 {% block custom_scripts %}
     <script src="{% static 'cctti_webapp/js/landing_page.js' %}"></script>
+    <script src="{% static 'cctti_webapp/js/user_login.js' %}"></script>
 {% endblock %}

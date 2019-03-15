@@ -7,6 +7,8 @@
 
 {% block css %}
     <script src="{% static 'cctti_webapp/js/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'cctti_webapp/js/verifiy_applicant.js' %}"></script>
+    <script src="{% static 'cctti_webapp/js/drop_application.js' %}"></script>
 {% endblock %}
 
 {% block content %}
@@ -171,7 +173,6 @@
                                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                                                     <button id="verify-applicant_{{ i.reference_code }}" type="submit" class="btn btn-success">Submit</button>
                                                   </div>
-                                                    <script src="{% static 'cctti_webapp/js/verifiy_applicant.js' %}"></script>
                                                     <script>
                                                         $("#verify-applicant_{{ i.reference_code }}").on('click',  (event) => {
                                                             event.preventDefault();
@@ -210,7 +211,8 @@
                                                   </div>
                                                   <div class="modal-footer">
                                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                                    <button type="button" class="btn btn-danger">Drop Application</button>
+                                                    <button type="button" id="drop_applicant_{{ i.id }}"
+                                                            class="btn btn-danger">Drop Application</button>
                                                   </div>
                                                 </div>
                                               </div>
@@ -223,8 +225,11 @@
                                             </button>
 
                                             <script>
-
+                                                document.getElementById('drop_applicant_{{ i.id }}').addEventListener('click', () => {
+                                                    drop_application({{ i.id }});
+                                                })
                                             </script>
+
                                         </td>
                                     </tr>
 

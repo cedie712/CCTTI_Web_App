@@ -28,13 +28,11 @@
 {#      </li>#}
         <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown
+          Options
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
+          <a class="dropdown-item" href="#">Change Email</a>
+          <a class="dropdown-item" href="#">Change Password</a>
         </div>
       </li>
 
@@ -42,8 +40,8 @@
 
     <span class="nav-item text-secondary mr-sm-4">CCTTI Administration</span>
     <div class="my-2 my-lg-0">
-      <a href="{% url 'landing_page' %}#tesda-block">
-          <button class="btn btn-info my-2 my-sm-0" id="staff-s">
+      <a href="{% url 'user_logout' %}">
+          <button class="btn btn-danger my-2 my-sm-0" id="staff-s" href="">
               <i class="fa fa-sign-out"></i>&nbsp;Logout</button>
       </a>
     </div>

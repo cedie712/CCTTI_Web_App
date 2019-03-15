@@ -1,5 +1,7 @@
 from django.shortcuts import render
-from django.http import JsonResponse
+from django.http import JsonResponse, HttpResponseRedirect
+from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
 
 # Models
 from . models import ApplicantInformation
@@ -40,6 +42,8 @@ def send_mail_single(mail_object):
 
 # Create your views here.
 def landing_page(request):
+    if request.user.is_authenticated:
+        return HttpResponseRedirect('/main/')
     return render(request, 'cctti_webapp/components/landing_page.html')
 
 
@@ -166,7 +170,23 @@ def applicant_registration(request):
 
 
 # # # # # # # # # # # STAFF PAGES # # # # # # # # # # #
+def user_login(request):
+    if request.method == 'POST':
+        user_authenticate = authenticate(username=request.POST['username'], password=request.POST['password'])
 
+        if user_authenticate:
+            login(request, user_authenticate)
+            return JsonResponse({'message': 'ok'})
+        return JsonResponse({'message': 'incorrect username or password'})
+
+
+@login_required
+def user_logout(request):
+    logout(request)
+    return HttpResponseRedirect('/')
+
+
+@login_required
 def index(request):
     context = {}
     applicant_count = len(ApplicantInformation.objects.all().exclude(is_verified=True))
@@ -176,6 +196,7 @@ def index(request):
     return render(request, 'cctti_webapp/components/staff_index.html', context=context)
 
 
+@login_required
 def applicants(request):
     applicant_objects = ApplicantInformation.objects.all().exclude(is_verified=True)
 
@@ -234,6 +255,15 @@ def applicants(request):
                   context={'applicant_objects': applicant_objects})
 
 
+@login_required
+def delete_application(request):
+    if request.method == 'POST':
+        applicant_object = ApplicantInformation.objects.filter(pk=request.POST['applicant_id'])
+        applicant_object.delete()
+        return JsonResponse({'message': 'ok'})
+
+
+@login_required
 def verified_students(request):
     verified_students_objects = ApplicantInformation.objects.all().exclude(is_verified=False)
 
