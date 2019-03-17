@@ -1,8 +1,9 @@
 from django.shortcuts import render
-from django.http import JsonResponse, HttpResponseRedirect
+from django.http import JsonResponse, HttpResponseRedirect, HttpResponse
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
+import json
 
 # Models
 from . models import ApplicantInformation
@@ -200,6 +201,25 @@ def index(request):
 
 
 @login_required
+def applicant_stats(request):
+    applicant_objects = ApplicantInformation.objects.filter(sign_up_date__year='2019')
+    month_list = []
+    for ki, vi in groupby(applicant_objects, key=lambda x: x.sign_up_date.strftime("%m")):
+        applicant_objects_count = ApplicantInformation.objects.filter(sign_up_date__month=ki)
+        month_list.append({ki: len(applicant_objects_count)})
+    # applicant_stats.append({k: month_list})
+
+
+    print(month_list)
+
+    applicant_stats = {'applicant_stats': month_list}
+
+    return HttpResponse(json.dumps(applicant_stats), content_type = 'application/javascript; charset=utf8')
+
+    # return JsonResponse(applicant_stats, safe=False)
+
+
+@login_required
 def applicants(request):
     applicant_objects = ApplicantInformation.objects.all().exclude(is_verified=True)
 
@@ -210,18 +230,6 @@ def applicants(request):
             middle_char = i.middle_name[0]
         i.FFM = ('%s%s%s' % (i.last_name[0], i.first_name[0], middle_char)).upper()
         i.YY = i.birth_date[-2:]
-
-    applicant_stats = []
-    #
-    for k, v in groupby(applicant_objects, key=lambda x: x.sign_up_date.strftime("%Y")):
-        month_list = []
-        for ki, vi in groupby(applicant_objects, key=lambda x: x.sign_up_date.strftime("%m")):
-            applicant_objects_count = ApplicantInformation.objects.filter(Q(sign_up_date__year=k) & Q(sign_up_date__month=ki))
-            month_list.append({ki: len(applicant_objects_count)})
-        applicant_stats.append({k: month_list})
-
-    print(applicant_stats)
-
 
     # POST
     if request.method == 'POST':

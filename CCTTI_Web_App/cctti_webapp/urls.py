@@ -11,4 +11,5 @@ urlpatterns = [
     path('applicants/', views.applicants, name='applicants'),
     path('verified_students/', views.verified_students, name='verified_students'),
     path('delete_application/', views.delete_application, name='delete_application'),
+    path('fetch_applicant_stats/', views.applicant_stats, name='fetch_applicant_stats'),
 ]

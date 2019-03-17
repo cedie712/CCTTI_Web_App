@@ -5,6 +5,9 @@
     CCTTI | Home
 {% endblock %}
 
+{% block css %}
+{% endblock %}
+
 {% block content %}
     {% include 'cctti_webapp/components/staff_nav.html' %}
     <nav class="nav mobile-top-links justify-content-center">
@@ -72,54 +75,9 @@
 {% endblock %}
 
 {% block javascripts %}
-
-<script src="{% static 'cctti_webapp/js/Chart.js' %}"></script>
-<script>
-var ctx = document.getElementById("myChart").getContext('2d');
-var myChart = new Chart(ctx, {
-    type: 'line',
-    data: {
-        labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-        datasets: [{
-            label: '# of Votes',
-            data: [12, 19, 33, 44, 24, 3, 9, 7, 23, 54, 45, 45],
-            backgroundColor: [
-                'rgba(0, 255, 0, 0.32)',
-            ],
-            borderColor: [
-                'rgba(0, 255, 0,1)',
-            ],
-            borderWidth: 1
-        },
-        {
-            label: '# of Applicants',
-            data: [12, 29, 13, 64, 4, 13, 19, 7, 23, 64, 55, 25],
-            backgroundColor: [
-                'rgba(0, 0, 255, 0.32)',
-            ],
-            borderColor: [
-                'rgba(0, 0, 255,1)',
-            ],
-            borderWidth: 1
-        }]
-    },
-    options: {animateScale : true,
-
-				hover: {
-					mode: 'nearest',
-					intersect: true
-				},
-        scales: {
-            yAxes: [{
-                ticks: {
-                    beginAtZero:true
-                }
-            }]
-        },
-    }
-});
-
-</script>
+    <script src="{% static 'cctti_webapp/js/Chart.js' %}"></script>
+    {% csrf_token %}
+    <script src="{% static 'cctti_webapp/js/fetch_applicant_stats.js' %}"></script>
     {% include 'cctti_webapp/components/footer_staff_pages.html' %}
 {% endblock %}
 
