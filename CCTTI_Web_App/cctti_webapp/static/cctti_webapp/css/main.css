@@ -48,3 +48,8 @@
 table {
     border-radius: 8px;
 }
+
+.test_color {
+    color: rgba(170, 0, 0, 0.9);
+    background: rgba(9, 108, 219, 0.95);
+}

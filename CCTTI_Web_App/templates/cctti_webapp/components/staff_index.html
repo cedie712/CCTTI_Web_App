@@ -39,34 +39,44 @@
 
                 <div class="container-fluid">
                     <div class="row">
-                        <div class="col-sm-4 justify-content-center">
-                            <div class="card notice-card container text-center bg-blue-dark">
-                                <i class="fa fa-envelope fa-3x text-warning"></i>
-                                <h6 class="display-4 text-white">234</h6>
-                                <p class="text-info">Messages</p>
+                        <div class="col-sm-6">
+                            <div class="card notice-card container text-center bg-light">
+                                    <i class="fa fa-users fa-3x text-danger"></i>
+                                    <h6 class="display-4 text-dark">{{ applicant_count }}</h6>
+                                    <p class="text-info">Applicants</p>
                             </div>
                             <br>
                         </div>
-                        <div class="col-sm-4  justify-content-center">
-                            <div class="card notice-card container text-center bg-blue-dark">
-                                <i class="fa fa-users fa-3x text-danger"></i>
-                                <h6 class="display-4 text-white">{{ applicant_count }}</h6>
-                                <p class="text-info">Applicants</p>
-                            </div>
-                            <br>
-                        </div>
-                        <div class="col-sm-4  justify-content-center">
-                            <div class="card notice-card container text-center bg-blue-dark">
+                        <div class="col-sm-6">
+                            <div class="card notice-card container text-center bg-light">
                                 <i class="fa fa-check fa-3x text-success"></i>
-                                <h6 class="display-4 text-white">{{ verified_student_count }}</h6>
+                                <h6 class="display-4 text-dark">{{ verified_student_count }}</h6>
                                 <p class="text-info">Verified Students</p>
                             </div>
                             <br>
                         </div>
                     </div>
+                <hr>
+                <h4 class="text-default ">Verified vs Non-Verified Applicant Comparison</h4>
+
                 <div class="graph-container">
                     <canvas id="myChart" width="400" height="180"></canvas>
                 </div>
+
+                <br>
+                    <div class="row">
+                        <div class="offset-sm-8 col-sm-4">
+                            <div class="input-group mb-3">
+                              <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon3">Comparison in year of:</span>
+                              </div>
+                                <select class="form-control" aria-describedby="basic-addon3">
+                                    <option value="{% now 'Y' %}">{% now 'Y' %}</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
 
             </div>

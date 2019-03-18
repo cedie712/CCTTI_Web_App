@@ -19,14 +19,20 @@ body {
 }
 
 .notice-card {
-    /*background-color: white;*/
-    min-height: 200px;
-    min-width: 200px;
+
+    /*border: none;*/
+    width: 380px;
+    min-height: 150px;
+    min-width: 150px;
     padding: 30px;
+
+    box-shadow: 15px 23px 31px rgba(40, 40, 40, 0.18);
 }
 
 .graph-container {
-    background-color: white;
+    background-color: #c7c7c7;
+
+    box-shadow: 15px 23px 31px rgba(40, 40, 40, 0.18);
 }
 
 
@@ -39,6 +45,10 @@ body {
 
     .default-links {
         display: none;
+    }
+
+    .notice-card {
+        width: auto;
     }
 }
 

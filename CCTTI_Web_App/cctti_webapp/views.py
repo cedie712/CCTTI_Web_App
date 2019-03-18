@@ -202,21 +202,32 @@ def index(request):
 
 @login_required
 def applicant_stats(request):
-    applicant_objects = ApplicantInformation.objects.filter(sign_up_date__year='2019')
-    month_list = []
-    for ki, vi in groupby(applicant_objects, key=lambda x: x.sign_up_date.strftime("%m")):
-        applicant_objects_count = ApplicantInformation.objects.filter(sign_up_date__month=ki)
-        month_list.append({ki: len(applicant_objects_count)})
-    # applicant_stats.append({k: month_list})
+    if request.method == 'POST':
+        print(request.POST['year'])
+        applicant_objects = ApplicantInformation.objects.filter(sign_up_date__year=str(request.POST['year']))
+        month_list = []
 
+        month_list_verified = []
 
-    print(month_list)
+        for ki, vi in groupby(applicant_objects, key=lambda x: x.sign_up_date.strftime("%m")):
 
-    applicant_stats = {'applicant_stats': month_list}
+            applicant_objects_count = ApplicantInformation.objects.filter(sign_up_date__month=ki).count()
+            applicant_object_dict = {ki: applicant_objects_count}
+            if applicant_object_dict not in month_list:
+                month_list.append(applicant_object_dict)
 
-    return HttpResponse(json.dumps(applicant_stats), content_type = 'application/javascript; charset=utf8')
+            verified_applicant_objects_count = ApplicantInformation.objects.\
+                filter(Q(is_verified=True) & Q(sign_up_date__month=ki)).count()
+            verified_applicant_objects_dict = {ki: verified_applicant_objects_count}
+            if verified_applicant_objects_dict not in month_list_verified:
+                month_list_verified.append(verified_applicant_objects_dict)
 
-    # return JsonResponse(applicant_stats, safe=False)
+        print(month_list)
+        print(month_list_verified)
+
+        applicant_stats = {'applicant_stats': month_list, 'verified_applicant_stats': month_list_verified}
+
+        return HttpResponse(json.dumps(applicant_stats), content_type = 'application/javascript; charset=utf8')
 
 
 @login_required

@@ -1,17 +1,18 @@
 
-function fetch_stats() {
+function fetch_stats(year) {
     $.ajax({
-            type: 'GET',
+            type: 'POST',
             url: '/fetch_applicant_stats/',
         data: {
             // form 1 data
+            'year': year,
             'csrfmiddlewaretoken': $('input[name=csrfmiddlewaretoken]').val()
 
         },
         dataType: 'json',
             success: function (data) {
                 console.log(data);
-                draw(data, '2019');
+                draw(data);
         }
     });
 }
@@ -19,9 +20,10 @@ function fetch_stats() {
 
 
 
-function draw(data, year) {
+function draw(data) {
     let months = [];
     let applicant_counts = [];
+    let verified_applicant_counts = [];
 
     let month_converter = {
         '01': 'Jan',
@@ -45,8 +47,11 @@ function draw(data, year) {
         }
     }
 
-    console.log(months);
-    console.log(applicant_counts);
+    for (let i = 0; i < data.verified_applicant_stats.length; i++) {
+        for (let key of Object.keys(data.applicant_stats[i])) {
+            verified_applicant_counts.push(data.verified_applicant_stats[i][key]);
+        }
+    }
 
 
     var ctx = document.getElementById("myChart").getContext('2d');
@@ -54,27 +59,26 @@ function draw(data, year) {
     var myChart = new Chart(ctx, {
         type: 'line',
         data: {
-            // labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
             labels: months,
             datasets: [{
-                label: '# of Votes',
+                label: '# of applicants',
                 data: applicant_counts,
                 backgroundColor: [
-                    'rgba(0, 255, 0, 0.32)',
+                    'rgba(170, 0, 0, 0.2)',
                 ],
                 borderColor: [
-                    'rgba(0, 255, 0,1)',
+                    'rgba(170, 0, 0)',
                 ],
                 borderWidth: 1
             },
             {
-                label: '# of Applicants',
-                data: [12, 29, 13, 64, 4, 13, 19, 7, 23, 64, 55, 25],
+                label: '# of applicants that was verified',
+                data: verified_applicant_counts,
                 backgroundColor: [
-                    'rgba(0, 0, 255, 0.32)',
+                    'rgba(9, 108, 219, 0.7)',
                 ],
                 borderColor: [
-                    'rgba(0, 0, 255,1)',
+                    'rgba(9, 108, 219)',
                 ],
                 borderWidth: 1
             }]
@@ -96,5 +100,5 @@ function draw(data, year) {
     });
 }
 
-
-fetch_stats();
+let current_date = new Date();
+fetch_stats(current_date.getFullYear());
