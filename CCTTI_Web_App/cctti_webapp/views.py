@@ -7,6 +7,7 @@ import json
 
 # Models
 from . models import ApplicantInformation
+from django.contrib.auth.models import User
 
 from threading import Thread
 
@@ -197,6 +198,17 @@ def index(request):
     context['applicant_count'] = applicant_count
     verified_student_count = len(ApplicantInformation.objects.all().exclude(is_verified=False))
     context['verified_student_count'] = verified_student_count
+
+    applicant_objects = ApplicantInformation.objects.all()
+
+    year_exists = []
+
+    for k, v in groupby(applicant_objects, key=lambda x: x.sign_up_date.strftime("%Y")):
+        year_exists.append(k)
+
+    context['year_exists'] = year_exists
+
+
     return render(request, 'cctti_webapp/components/staff_index.html', context=context)
 
 
@@ -221,9 +233,9 @@ def applicant_stats(request):
             verified_applicant_objects_dict = {ki: verified_applicant_objects_count}
             if verified_applicant_objects_dict not in month_list_verified:
                 month_list_verified.append(verified_applicant_objects_dict)
-
-        print(month_list)
-        print(month_list_verified)
+        #
+        # print(month_list)
+        # print(month_list_verified)
 
         applicant_stats = {'applicant_stats': month_list, 'verified_applicant_stats': month_list_verified}
 
@@ -314,4 +326,25 @@ def verified_students(request):
     return render(request, 'cctti_webapp/components/verified_student_view.html',
                   context={'verified_students_objects': verified_students_objects})
 
+@login_required
+def update_email(request):
+    # if request.method == 'POST':
+    if request.method == 'POST':
+        email = request.POST['email']
+        context = {'response': 'your email was updated'}
+        user_object = User.objects.get(username=request.user)
+        if user_object.email == email:
+            context = {'response': 'you did not change your email at all'}
+        else:
+            user_object.email = email
+            user_object.save()
+
+        return render(request, 'cctti_webapp/components/update_email.html', context=context)
+    return render(request, 'cctti_webapp/components/update_email.html')
+
 # # # # # # # # # # # STAFF PAGES # # # # # # # # # # #
+
+
+# 404 page test
+# def four_o_four(request):
+#     return render(request, '404.html')

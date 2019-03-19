@@ -1,3 +1,4 @@
+Chart.defaults.global.defaultFontColor = "#fff";
 
 function fetch_stats(year) {
     $.ajax({
@@ -11,7 +12,6 @@ function fetch_stats(year) {
         },
         dataType: 'json',
             success: function (data) {
-                console.log(data);
                 draw(data);
         }
     });
@@ -93,12 +93,19 @@ function draw(data) {
                 yAxes: [{
                     ticks: {
                         beginAtZero:true
-                    }
-                }]
+                    },
+                }],
             },
-        }
+        },
     });
 }
 
 let current_date = new Date();
 fetch_stats(current_date.getFullYear());
+
+
+document.getElementById('stats_year').addEventListener('change', () => {
+    let year = document.getElementById('stats_year').value;
+    fetch_stats(year);
+});
+

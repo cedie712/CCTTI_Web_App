@@ -15,7 +15,7 @@
         <a class="nav-link text-info" href="{% url 'verified_students' %}"><i class="fa fa-check fa-2x"></i></a>
         <a class="nav-link text-info" href="{% url 'applicants' %}"><i class="fa fa-users fa-2x"></i></a>
 {#        <a class="nav-link text-info" href="#"><i class="fa fa-newspaper-o fa-2x"></i></a>#}
-        <a class="nav-link text-info" href="#"><i class="fa fa-envelope fa-2x"></i></a>
+{#        <a class="nav-link text-info" href="#"><i class="fa fa-envelope fa-2x"></i></a>#}
     </nav>
     <br>
     <div class="container-fluid">
@@ -28,7 +28,7 @@
                       <a class="nav-link text-dark side-link" href="{% url 'verified_students' %}"><i class="fa fa-check"></i>&nbsp;Verified Students</a>
                       <a class="nav-link text-dark side-link" href="{% url 'applicants' %}"><i class="fa fa-users"></i>&nbsp;Applicants</a>
 {#                      <a class="nav-link text-dark side-link" href="#"><i class="fa fa-newspaper-o"></i>&nbsp;Feeds</a>#}
-                      <a class="nav-link text-dark side-link" href="#"><i class="fa fa-envelope"></i>&nbsp;Mailer</a>
+{#                      <a class="nav-link text-dark side-link" href="#"><i class="fa fa-envelope"></i>&nbsp;Mailer</a>#}
                     </nav>
 
 
@@ -40,18 +40,18 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-sm-6">
-                            <div class="card notice-card container text-center bg-light">
+                            <div class="card notice-card container text-center">
                                     <i class="fa fa-users fa-3x text-danger"></i>
                                     <h6 class="display-4 text-dark">{{ applicant_count }}</h6>
-                                    <p class="text-info">Applicants</p>
+                                    <p class="text-default">Applicants</p>
                             </div>
                             <br>
                         </div>
                         <div class="col-sm-6">
-                            <div class="card notice-card container text-center bg-light">
+                            <div class="card notice-card container text-center">
                                 <i class="fa fa-check fa-3x text-success"></i>
                                 <h6 class="display-4 text-dark">{{ verified_student_count }}</h6>
-                                <p class="text-info">Verified Students</p>
+                                <p class="text-default">Verified Students</p>
                             </div>
                             <br>
                         </div>
@@ -59,7 +59,7 @@
                 <hr>
                 <h4 class="text-default ">Verified vs Non-Verified Applicant Comparison</h4>
 
-                <div class="graph-container">
+                <div class="graph-container bg-dark">
                     <canvas id="myChart" width="400" height="180"></canvas>
                 </div>
 
@@ -70,8 +70,11 @@
                               <div class="input-group-prepend">
                                 <span class="input-group-text" id="basic-addon3">Comparison in year of:</span>
                               </div>
-                                <select class="form-control" aria-describedby="basic-addon3">
+                                <select id="stats_year" class="form-control" aria-describedby="basic-addon3">
                                     <option value="{% now 'Y' %}">{% now 'Y' %}</option>
+                                    {% for i in year_exists %}
+                                        <option value="{{ i }}">{{ i }}</option>
+                                    {% endfor %}
                                 </select>
                             </div>
                         </div>

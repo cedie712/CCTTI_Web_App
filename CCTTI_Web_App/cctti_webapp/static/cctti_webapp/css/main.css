@@ -53,3 +53,7 @@ table {
     color: rgba(170, 0, 0, 0.9);
     background: rgba(9, 108, 219, 0.95);
 }
+
+#forgot_pass_link {
+    text-decoration: none;
+}

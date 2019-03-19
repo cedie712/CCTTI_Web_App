@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}{% endblock %}</title>
+    {% load staticfiles %}
+    <link rel="icon" type="png" href="{% static 'cctti_webapp/website_photos/cctti.png' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'cctti_webapp/bootstrap-4.1.1/dist/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'cctti_webapp/Font-Awesome-fa-4/css/font-awesome.min.css' %}">
+
+<style>
+    body {
+        background-color: #0c242c;
+    }
+
+    .div-fourofour {
+        margin-top: 150px;
+    }
+
+</style>
+
+</head>
+<body>
+
+{% block content %}
+    <div class="container">
+        <div class="">
+            <div class="text-center div-fourofour">
+
+                <h1 class="text-white display-4">HTTP Response 404 <i class="fa fa-exclamation-triangle text-warning"></i></h1><br>
+                <h3 class="text-info">Ooops! This means we don't have the page you had requested</h3>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+</body>
+</html>
